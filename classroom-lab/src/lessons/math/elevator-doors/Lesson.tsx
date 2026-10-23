@@ -69,7 +69,7 @@ export default function ElevatorDoors() {
    </div>
    <div className="elev-door right" style={{ width: `${doorWidth}%` }}>{right.map(f => <span key={f} className="elev-chip">{f}</span>)}</div>
   </div>
-  <p className="elev-status">{closed ? <strong>The doors are closed.</strong> : <>Still possible: <strong>{lo}</strong> to <strong>{hi - 1}</strong> ({remaining} {remaining === 1 ? 'number' : 'numbers'})</>}</p>
+  <p className="elev-status">{closed ? <strong>The doors are closed.</strong> : remaining === 1 ? <>Still possible: only <strong>{lo}</strong></> : <>Still possible: <strong>{lo}</strong> to <strong>{hi - 1}</strong> ({remaining} numbers)</>}</p>
 
   {!closed && <div className="elev-ask">
    <p>Next number to try: <strong className="elev-k">{lo}</strong>. Is {lo} a factor of {n}?</p>
@@ -85,7 +85,7 @@ export default function ElevatorDoors() {
       : <>{n} ÷ {last.k} = {last.partner} with nothing left over, so {last.k} × {last.partner} = {n}. {last.k} goes on the left door and {last.partner} goes on the right door.</>
      : <>{n} ÷ {last.k} = {last.partner} R {last.remainder}. There is a remainder, so {last.k} is not a factor of {n}. It stays out of the elevator.</>}
    </div>}
-   {shortcut && <div className="challenge"><strong>Doors closed early.</strong> Any factor bigger than {lo - 1} would need a partner smaller than {lo - 1}, and you have already tried every number that small. So no new factors can be hiding inside.</div>}
+   {shortcut && <div className="challenge"><strong>Doors closed early.</strong> Any factor {lo} or bigger would need a partner smaller than {lo}, and you have already tried every number that small. So no new factors can be hiding inside.</div>}
   </div>
 
   {!closed && lo * lo > n && remaining >= 3 && <div className="challenge elev-puzzle">
@@ -99,7 +99,9 @@ export default function ElevatorDoors() {
    <p>{n} has {factors.length} factors{factors.length === 2 ? `, only 1 and itself, so ${n} is a prime number` : ''}.</p>
    <div className="challenge"><strong>Think about it:</strong> {middle !== null
     ? `Why did ${middle} end up alone in the middle? Which other numbers do you think will have a factor in the middle?`
-    : factors.length === 2
+    : shortcut
+     ? `You stopped after trying ${lo - 1} instead of testing all the way to ${n - 1}. Explain to a partner why that was safe.`
+     : factors.length === 2
      ? `The doors took a long time to close for ${n}. Why? Could you have stopped sooner?`
      : `You never had to test numbers on the right side, like ${right.length > 1 ? right[0] + 1 : n - 1}. How did the doors already know they weren't factors?`}</div>
    <button className="elev-again" onClick={() => start(n)}>Try {n} again</button>
