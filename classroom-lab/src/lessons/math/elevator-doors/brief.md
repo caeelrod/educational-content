@@ -1,0 +1,21 @@
+# Lesson brief: Elevator Doors
+
+- Subject / grade: Math / Grade 5 (factoring is often first taught in grade 4; here it is review and a lead-in to simplifying fractions — confirm placement with the teacher)
+- Student learning objective (observable): Given a whole number from 2 to 100, the student lists all of its factors by testing candidates in order and pairing each factor with its partner, and explains why the search can stop when the "doors" meet.
+- Topic / motivating question: How do you know when you have found *every* factor of a number?
+- Standards (jurisdiction + version/year + exact code + URL; or TBD): TBD. Verify against the Oklahoma Academic Standards for Mathematics at https://oklahoma.gov/education/services/standards-learning/oklahoma-academic-standards.html with the teacher.
+- Lesson type: Interactive (browser).
+- Target duration: 15 minutes.
+- Classroom setting: Projector for a whole-class demo, or individual Chromebooks.
+- Prior knowledge: Multiplication facts; division with remainders; the meaning of "factor."
+- Key misconceptions:
+  - Stopping too early, or testing far too many numbers, because there is no clear stopping rule.
+  - Forgetting 1 and the number itself.
+  - Listing one factor but not its partner (e.g., finding 3 for 24 but missing 8).
+  - Listing a square number's middle factor twice (6 and 6 for 36).
+- Student actions and feedback: The student chooses a number, then for each candidate predicts "factor or not." Feedback shows the division (with remainder when there is one), places the factor pair on the doors, and shows the shrinking range of possibilities.
+- Formative assessment / evidence of learning: A complete factor list; answers to the closing reflection prompt (why the untested numbers on the right could not be factors; why a square number has a middle factor).
+- Accessibility / device constraints: Keyboard-operable buttons and number input; text status for screen readers; respects reduced motion; works at phone width.
+- Reliable educational sources: The method was contributed by the requesting teacher (originator: TBD, name to be confirmed). The underlying math (factor pairs; you only need to search up to the square root) is standard elementary number theory. No outside material was copied.
+- Known simplifications and limitations: Limited to 2–100. The method as written closes the doors only when they meet a factor pair, so primes take many steps. An optional "close the doors early" puzzle (square-root idea) appears once k × k > n.
+- Teacher sign-off needed: Yes. Confirm grade placement, the wording of the metaphor, and whether a "common factors of two numbers" version is wanted.
