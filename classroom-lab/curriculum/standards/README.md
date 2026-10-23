@@ -1,0 +1,1 @@
+Store short, source-linked crosswalks here (standard IDs, citations, implementation year, teacher comments). Do not copy entire proprietary curricula or claim alignment without checking primary documents.
