@@ -11,4 +11,4 @@ The scaffold uses relative Vite asset paths to support project Pages deployments
 ## Important
 A public GitHub Pages site is not a private LMS; do not publish identifiable student information, answer keys intended to be secret, or restricted curriculum materials. Host teacher-only documents privately if needed.
 
-Note: This starter archive does not include a dependency lockfile. After the first successful local `npm install`, commit `package-lock.json` and switch CI back to `npm ci` for reproducible builds.
+Note: The workflow lives at the repository root (`.github/workflows/deploy.yml`) and builds the `classroom-lab/` folder. It uses `npm ci` with the committed `package-lock.json` for reproducible builds.
