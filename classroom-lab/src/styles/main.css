@@ -6,16 +6,25 @@
 .elev-setup>button{background:#163b4d;color:#fff;border-color:#163b4d}
 .elev-picks{display:flex;flex-wrap:wrap;gap:8px}
 .elev-picks .selected{background:#e3f2f1;border-color:#147a83}
-.elevator{display:flex;height:210px;border:6px solid #244758;border-radius:14px 14px 4px 4px;background:#f3f7f9;overflow:hidden}
-.elev-door{display:flex;flex-wrap:wrap;align-content:center;gap:6px;padding:10px;background:linear-gradient(90deg,#c9d8de,#dfe9ed);transition:width .5s ease}
-.elev-door.left{justify-content:flex-end;border-right:3px solid #8aa3ad}
-.elev-door.right{justify-content:flex-start;border-left:3px solid #8aa3ad}
+.elev-shaft{border-radius:16px 16px 6px 6px;background:#244758;padding:0 6px 6px}
+.elev-header{display:flex;align-items:center;justify-content:center;gap:14px;padding:8px 0}
+.elev-display{min-width:5.5em;padding:3px 12px;border-radius:6px;background:#0d1d26;color:#ffb347;font:700 1.05rem ui-monospace,SFMono-Regular,Menlo,monospace;text-align:center;letter-spacing:.06em;text-shadow:0 0 6px #ff9a1f99;animation:elev-flicker .35s ease-out}
+.elev-lamp{width:12px;height:12px;border-radius:50%;background:#3b5664;box-shadow:inset 0 1px 2px #0006}
+.elev-shaft.closed .elev-lamp{background:#ffb347;box-shadow:0 0 10px #ffb347;animation:elev-chime 1.2s ease-out}
+.elev-shaft.closed .elevator{animation:elev-thud .45s ease-out .55s}
+.elevator{position:relative;display:flex;height:210px;border-radius:4px;background:#e9f0f3;box-shadow:inset 0 4px 10px #0b263333;overflow:hidden}
+.elev-door{display:flex;flex-wrap:wrap;align-content:center;gap:6px;padding:10px;background:repeating-linear-gradient(90deg,#ffffff1f 0 2px,#0000 2px 6px),linear-gradient(90deg,#bccdd4,#dfe9ed 55%,#c7d6dc);transition:width .7s cubic-bezier(.45,.05,.3,1.18)}
+.elev-door.left{justify-content:flex-end;border-right:5px solid #4b5d66;box-shadow:4px 0 8px #0b26332e}
+.elev-door.right{justify-content:flex-start;border-left:5px solid #4b5d66;box-shadow:-4px 0 8px #0b26332e}
 .elev-gap{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;padding:8px}
 .elev-chip{display:inline-flex;align-items:center;justify-content:center;min-width:2.3em;padding:4px 8px;border-radius:8px;background:#147a83;color:#fff;font-weight:800}
-.elev-chip.middle{background:#b55d12;font-size:1.3rem}
+.elev-chip.middle{background:#b55d12;font-size:1.3rem;animation:elev-drop .6s cubic-bezier(.3,1.5,.5,1)}
+.elev-chip.in-left{animation:elev-in-left .55s cubic-bezier(.3,1.4,.5,1)}
+.elev-chip.in-right{animation:elev-in-right .55s cubic-bezier(.3,1.4,.5,1)}
+.elev-reject{position:absolute;left:50%;top:38%;min-width:2.3em;padding:4px 8px;margin-left:-1.15em;border-radius:8px;background:#fff;border:2px solid #c0392b;color:#a12a1d;font-weight:800;text-align:center;pointer-events:none;animation:elev-reject 1.1s ease-in forwards}
 .elev-tiles{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
 .elev-tiles span{min-width:1.9em;text-align:center;padding:1px 4px;border-radius:6px;background:#fff;border:1px dashed #9fb7c0;color:#526574;font-size:.85rem}
-.elev-tiles .next{border:2px solid #b55d12;color:#7a3c08;font-weight:800}
+.elev-tiles .next{border:2px solid #b55d12;color:#7a3c08;font-weight:800;animation:elev-pulse 1.4s ease-in-out infinite}
 .elev-range{text-align:center;font-weight:800;font-size:1.4rem;color:#244758}
 .elev-range small{display:block;font-size:.8rem;font-weight:600;color:#617985}
 .elev-status{text-align:center;margin:10px 0 0}
@@ -30,7 +39,15 @@
 .elev-history summary{cursor:pointer;font-weight:650}
 .elev-setup button:focus-visible,.elev-choices button:focus-visible,.elev-puzzle button:focus-visible,.elev-again:focus-visible{outline:3px solid #4aabb1;outline-offset:2px}
 @media(max-width:640px){.elevator{height:240px}.elev-door{padding:6px;gap:4px}.elev-chip{min-width:1.9em;padding:3px 5px;font-size:.85rem}.elev-choices button{min-width:0;flex:1}}
-@media(prefers-reduced-motion:reduce){.elev-door{transition:none}}
+@keyframes elev-in-left{from{transform:translateX(60px) scale(.5);opacity:0}}
+@keyframes elev-in-right{from{transform:translateX(-60px) scale(.5);opacity:0}}
+@keyframes elev-drop{from{transform:translateY(-70px);opacity:0}}
+@keyframes elev-reject{0%{transform:translateX(0)}8%{transform:translateX(-7px)}16%{transform:translateX(7px)}24%{transform:translateX(-5px)}32%{transform:translateX(4px)}40%{transform:translateX(0);opacity:1}100%{transform:translateY(130px) rotate(18deg);opacity:0}}
+@keyframes elev-pulse{50%{box-shadow:0 0 0 4px #b55d1233}}
+@keyframes elev-flicker{0%{opacity:.2}40%{opacity:1}55%{opacity:.5}100%{opacity:1}}
+@keyframes elev-thud{30%{transform:translateY(3px)}60%{transform:translateY(-1px)}}
+@keyframes elev-chime{0%,40%,80%{box-shadow:0 0 18px #ffd27f}20%,60%{box-shadow:0 0 2px #ffb347}}
+@media(prefers-reduced-motion:reduce){.elev-door{transition:none}.elev-shaft *{animation:none!important}.elev-reject{display:none}}
 .water-art{margin:24px 0;border-radius:16px;overflow:hidden;line-height:0}
 .water-art svg{display:block;width:100%;height:auto}
 .wc-sun circle{fill:#f2b42c}.wc-sun line{stroke:#f2b42c;stroke-width:5;stroke-linecap:round}
