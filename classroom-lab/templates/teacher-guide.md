@@ -13,6 +13,6 @@
 ## Simplifications / limitations
 
 ## Approval
-- Teacher reviewer:
+- Reviewer (teacher, instructor, or subject expert):
 - Review date:
 - Approval decision:

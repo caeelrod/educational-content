@@ -1,12 +1,12 @@
 # Lesson brief: <title>
 
-- Subject / grade:
+- Section / subject / level (grade, course, or prerequisite):
 - Student learning objective (observable):
 - Topic / motivating question:
 - Standards (jurisdiction + version/year + exact code + URL; or TBD):
 - Lesson type (interactive, animation, printable, video, etc.):
 - Target duration:
-- Classroom setting (projector, individual Chromebooks, offline, etc.):
+- Setting (classroom projector, individual Chromebooks, lecture hall, self-study, offline, etc.):
 - Prior knowledge:
 - Key misconceptions:
 - Student actions and feedback:
@@ -14,4 +14,4 @@
 - Accessibility / device constraints:
 - Reliable educational sources:
 - Known simplifications and limitations:
-- Teacher sign-off needed:
+- Reviewer sign-off needed (teacher, instructor, or subject expert):
