@@ -23,7 +23,8 @@ npm run build
 ```
 
 ## Current lessons
-All current lessons are in the Grade School section: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
+- Grade School: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
+- College: Proof by Induction.
 
 **All are demos, not independently validated curriculum.** Do not assume standards alignment.
 

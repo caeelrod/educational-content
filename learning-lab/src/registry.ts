@@ -6,6 +6,7 @@ import DecimalMagnets from './lessons/grade-school/math/decimal-magnets/Lesson';
 import WaterCycle from './lessons/grade-school/science/water-cycle/Lesson';
 import HumanCell from './lessons/grade-school/science/human-cell/Lesson';
 import MusicTheory from './lessons/grade-school/music/music-theory-basics/Lesson';
+import Induction from './lessons/college/math/induction/Lesson';
 
 export type Subject = 'math' | 'science' | 'music';
 export type Lesson = {
@@ -41,5 +42,8 @@ export const lessons: Lesson[] = [
     durationMinutes: 30, type: 'interactive', standards: [], status: 'demo', Component: HumanCell },
   { id: 'music-theory-basics', title: 'Music Theory Basics', section: 'grade-school', subject: 'music',
     summary: 'Play a piano to explore pitch, build rhythms from long and short notes, read a real song, and test your eyes and ears.',
-    durationMinutes: 35, type: 'interactive', standards: [], status: 'demo', Component: MusicTheory }
+    durationMinutes: 35, type: 'interactive', standards: [], status: 'demo', Component: MusicTheory },
+  { id: 'induction', title: 'Proof by Induction', section: 'college', subject: 'math',
+    summary: 'See why induction is not circular, build three proofs line by line, tile any board with L-shapes, and find the flaw in broken proofs.',
+    durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: Induction }
 ];
