@@ -11,6 +11,7 @@ import RatiosAndProportions from './lessons/middle-school/math/ratios-and-propor
 import PlateTectonics from './lessons/middle-school/science/plate-tectonics/Lesson';
 import NewtonsLaws from './lessons/high-school/science/newtons-laws/Lesson';
 import SupplyAndDemand from './lessons/high-school/economics/supply-and-demand/Lesson';
+import ChemicalBonding from './lessons/high-school/science/chemical-bonding/Lesson';
 import Induction from './lessons/college/math/induction/Lesson';
 import GeometricSeries from './lessons/college/math/geometric-series/Lesson';
 
@@ -64,6 +65,9 @@ export const lessons: Lesson[] = [
   { id: 'supply-and-demand', title: 'Supply and Demand', section: 'high-school', subject: 'economics',
     summary: 'Build demand and supply from real buyers and growers, watch a market find its price, shift the curves with the news, and test price ceilings and floors.',
     durationMinutes: 50, type: 'interactive', standards: [], status: 'demo', Component: SupplyAndDemand },
+  { id: 'chemical-bonding', title: 'The Periodic Table and Chemical Bonding', section: 'high-school', subject: 'science',
+    summary: 'Read valence electrons off the periodic table, explain its trends, build ionic and covalent compounds electron by electron, and predict which kind of bond two elements form.',
+    durationMinutes: 50, type: 'interactive', standards: [], status: 'demo', Component: ChemicalBonding },
   { id: 'induction', title: 'Proof by Induction', section: 'college', subject: 'math',
     summary: 'See why induction is not circular, build three proofs line by line, tile any board with L-shapes, and find the flaw in broken proofs.',
     durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: Induction },

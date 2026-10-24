@@ -27,7 +27,7 @@ npm run build
 ## Current lessons
 - Grade School: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
 - Middle School: Persuasive Writing, Ratios and Proportions, Plate Tectonics.
-- High School: Newton's Laws of Motion, Supply and Demand.
+- High School: Newton's Laws of Motion, Supply and Demand, The Periodic Table and Chemical Bonding.
 - College: Proof by Induction, Geometric Series.
 
 **All are demos, not independently validated curriculum.** Do not assume standards alignment.
