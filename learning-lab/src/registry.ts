@@ -10,10 +10,11 @@ import PersuasiveWriting from './lessons/middle-school/english/persuasive-writin
 import RatiosAndProportions from './lessons/middle-school/math/ratios-and-proportions/Lesson';
 import PlateTectonics from './lessons/middle-school/science/plate-tectonics/Lesson';
 import NewtonsLaws from './lessons/high-school/science/newtons-laws/Lesson';
+import SupplyAndDemand from './lessons/high-school/economics/supply-and-demand/Lesson';
 import Induction from './lessons/college/math/induction/Lesson';
 import GeometricSeries from './lessons/college/math/geometric-series/Lesson';
 
-export type Subject = 'math' | 'science' | 'music' | 'english';
+export type Subject = 'math' | 'science' | 'music' | 'english' | 'economics';
 export type Lesson = {
   id: string;
   title: string;
@@ -60,6 +61,9 @@ export const lessons: Lesson[] = [
   { id: 'newtons-laws', title: "Newton's Laws of Motion", section: 'high-school', subject: 'science',
     summary: 'Shove a block across wood, ice, and a frictionless floor, measure F = ma in a cart lab, push off on skates, draw free-body diagrams, and ride an elevator on a bathroom scale.',
     durationMinutes: 50, type: 'interactive', standards: [], status: 'demo', Component: NewtonsLaws },
+  { id: 'supply-and-demand', title: 'Supply and Demand', section: 'high-school', subject: 'economics',
+    summary: 'Build demand and supply from real buyers and growers, watch a market find its price, shift the curves with the news, and test price ceilings and floors.',
+    durationMinutes: 50, type: 'interactive', standards: [], status: 'demo', Component: SupplyAndDemand },
   { id: 'induction', title: 'Proof by Induction', section: 'college', subject: 'math',
     summary: 'See why induction is not circular, build three proofs line by line, tile any board with L-shapes, and find the flaw in broken proofs.',
     durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: Induction },
