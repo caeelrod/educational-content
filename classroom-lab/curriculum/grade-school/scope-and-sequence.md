@@ -1,4 +1,4 @@
-# Grade 5 curriculum map (pending teacher input)
+# Grade School curriculum map: Grade 5 (pending teacher input)
 
 **Status: UNCONFIRMED.** Add the actual school/district pacing guide, approved curriculum, and lesson sequence here. Do not invent alignment from example demos.
 
