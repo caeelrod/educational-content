@@ -1,0 +1,30 @@
+# Lesson brief: Plate Tectonics
+
+- Section / subject / level: Middle School / Science (earth science) / Grades 6 to 8. Confirm the grade where the school's science course teaches plate tectonics.
+- Student learning objective (observable): The student uses at least three lines of evidence (continent fit, fossils or rocks that match across an ocean, glacier marks, mirror-image magnetic stripes, the age of ocean floor) to explain that Earth's lithosphere is broken into moving plates; calculates a spreading rate in centimeters per year from a distance and an age; and, given the landforms, earthquakes, and volcanoes of a real place, names the kind of plate boundary it sits on and explains why.
+- Topic / motivating question: Why do earthquakes, volcanoes, and mountains show up where they do?
+- Standards (jurisdiction + version/year + exact code + URL; or TBD): TBD. Verify against the Oklahoma Academic Standards for Science at https://oklahoma.gov/education/services/standards-learning/oklahoma-academic-standards.html with the teacher, and record the confirmed code and grade in `curriculum/middle-school/`. Plate tectonics evidence is a common middle-school earth science topic (NGSS has a middle-school performance expectation on fossil, rock, continent-shape, and seafloor evidence for past plate motion), but don't assume NGSS codes or grade placement carry over to Oklahoma's adopted standards.
+- Lesson type: Interactive (browser), four parts meant to be done in order:
+  1. **Continent puzzle:** drag, turn, or keyboard-move Africa to fit against South America. Four clue layers (Mesosaurus fossils, Glossopteris fossils, 2-billion-year-old rocks, 300-million-year-old glacier marks) line up across the join once it fits. A slider then opens the South Atlantic from about 130 million years ago to today. Ends with Wegener's argument and why it was rejected at first (no mechanism).
+  2. **Seafloor spreading:** a view from above of a mid-ocean ridge. Students flip Earth's magnetic field while the ridge spreads, or play Earth's real reversal record for the last 4 million years, on a slow or fast ridge, and watch mirror-image stripes form, with a ship's magnetometer trace above. They answer two noticing questions (mirror symmetry; youngest rock at the ridge), then **Measure how fast plates move**: three generated problems with a distance and an age, answered in cm per year for one side and for the whole ocean, with feedback on unit and doubling slips.
+  3. **Boundary lab:** six animated cross-sections (mid-ocean ridge, continental rift, ocean-continent, ocean-ocean, continent-continent, and a transform fault seen from above) with a time slider and play button. Students predict the outcome before running time. Toggles show labels and earthquakes colored by depth. Each boundary lists what forms, earthquakes, volcanoes, and real places. A "What is a plate?" panel explains lithosphere and asthenosphere and addresses the "plates float on lava" idea.
+  4. **Boundary detective:** rounds of 6 cases drawn from 12 real places (Andes, Cascades, Mariana Islands, Aleutians, Himalayas, Iceland, East African Rift, Red Sea, San Andreas, North Anatolian Fault, Hawaii, Appalachians). Students read three clues and choose a boundary type or "not at a plate boundary". Wrong answers get feedback aimed at the specific mix-up, then the place is revealed with an explanation. Ends with a review list and **Retry the ones I missed**.
+- Target duration: About 45 minutes for all four. Parts 1 and 2 work as one 20-minute evidence lesson; parts 3 and 4 work as a 25-minute boundaries lesson on another day.
+- Setting: Projector or interactive whiteboard for a whole-class walkthrough, or individual Chromebooks and tablets.
+- Prior knowledge: Earth's layers (crust, mantle, core); what a fossil is; speed = distance ÷ time.
+- Key misconceptions:
+  - Plates float on a layer of melted rock or lava.
+  - Continents plow through the ocean floor on their own.
+  - Plates move only during earthquakes, or fast enough to notice.
+  - Plate boundaries are the same as coastlines.
+  - New crust at ridges means Earth is getting bigger.
+  - All volcanoes are at plate boundaries.
+  - The ocean floor is as old as the continents.
+  - Every convergent boundary makes volcanoes.
+  - Mountains only exist where plates meet today.
+- Student actions and feedback: Fit the puzzle (with hints on angle and distance); toggle clues; flip the magnetic field; answer noticing questions; calculate speeds with mistake-specific feedback; predict each boundary's outcome and see whether the model agrees; classify real places with targeted feedback.
+- Formative assessment / evidence of learning: The two noticing questions, the speed check score, boundary predictions, and the detective round score with its list of missed cases. Nothing is stored.
+- Accessibility / device constraints: Every control is a button, checkbox, slider, or text box with a label and works by keyboard. Africa can be moved with arrow keys and turned with Q/E or [ and ], or with the turn buttons; **Show me the fit** completes it for anyone who can't drag. Drawings have text descriptions that update with time. Feedback uses polite live regions. Animations jump instantly under reduced motion. On phones the wide drawings scroll sideways and start centered.
+- Reliable educational sources: USGS, *This Dynamic Earth: The Story of Plate Tectonics*; NOAA Ocean Exploration, "What is the mid-ocean ridge?"; the geomagnetic polarity time scale (Ogg, in *The Geologic Time Scale 2012* and *2020*) for reversal ages. All drawings and the coastline outlines are original. No textbook images or question banks were copied.
+- Known simplifications and limitations: See `lesson.json` `modelLimitations`. On-screen notes under each part say what the model simplifies.
+- Reviewer sign-off needed: Yes, the classroom teacher. Confirm grade placement and standards, the depth of the magnetism explanation, the speed calculation's difficulty, and the facts listed in the teacher guide.
