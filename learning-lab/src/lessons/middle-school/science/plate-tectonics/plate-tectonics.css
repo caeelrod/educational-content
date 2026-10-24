@@ -1,0 +1,188 @@
+/* Plate Tectonics lesson. Everything is scoped under .pt so it can't touch other lessons. */
+.activity.pt{max-width:none}
+.pt{line-height:1.6;--pt-normal:#2f4a66;--pt-reversed:#e7edf3}
+.pt h3{font-size:1.25rem;margin:4px 0 8px}
+.pt h4{font-size:1.05rem;margin:4px 0 6px}
+.pt button{border:1px solid #bed1d7;padding:9px 16px;border-radius:999px;background:#fff;color:#17394e;font-weight:650}
+.pt button:disabled{opacity:.5;cursor:default}
+.pt button[aria-pressed=true]{background:#e3f2f1;border-color:#147a83;box-shadow:inset 0 0 0 1px #147a83}
+.pt button:focus-visible,.pt input:focus-visible,.pt summary:focus-visible,.pt-land.movable:focus-visible{outline:3px solid #4aabb1;outline-offset:2px}
+.pt .pt-primary{background:#163b4d;color:#fff;border-color:#163b4d}
+.pt .pt-link{border:0;background:none;padding:6px 2px;color:#087c87;text-decoration:underline}
+.pt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pt-modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:18px 0 22px}
+.pt-modes button{padding:10px;font-size:.95rem}
+.pt-modes-next{display:flex;justify-content:flex-end;margin-top:22px}
+.pt-prereq{font-size:.9rem;color:#4c6473;background:#f3f7f9;border-radius:10px;padding:10px 14px}
+.pt-panel{border-top:1px solid #e3ecef;padding-top:18px}
+.pt-two{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:24px;align-items:start;margin-top:14px}
+.pt-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+.pt-label{display:block;font-weight:700;font-size:.85rem;color:#40606e;margin-bottom:6px}
+.pt-seg,.pt-chips{display:flex;flex-wrap:wrap;gap:8px}
+.pt .pt-seg button,.pt .pt-chips button{padding:6px 13px;font-size:.9rem}
+.pt-chips button{display:inline-flex;align-items:center;gap:6px}
+.pt-key{display:inline-block;width:10px;height:10px;border-radius:50%}
+.pt-muted{color:#617985;font-size:.92rem}
+.pt-help{font-size:.92rem;color:#40606e;margin:6px 2px 0;min-height:1.6em}
+.pt-note{font-size:.85rem;color:#617985;line-height:1.5;margin-top:18px}
+.pt-small-text{font-size:.82rem;color:#617985;white-space:nowrap}
+.pt-more{margin:12px 0;padding:10px 14px;border:1px solid #dce6e9;border-radius:12px;background:#fafcfd}
+.pt-more summary{cursor:pointer;font-weight:700}
+.pt-more p{margin:8px 0 4px}
+.pt-card{border-left:4px solid;background:#f7fafb;border-radius:8px;padding:8px 14px;margin:10px 0}
+.pt-card p{margin:4px 0;font-size:.95rem}
+.pt-takeaway{background:#edf7f4;border-left:4px solid #34a58b;padding:4px 16px;border-radius:8px;margin:14px 0}
+.pt-takeaway p{margin:10px 0}
+.pt-feedback{border-radius:10px;padding:10px 14px;margin:10px 0}
+.pt-feedback.good{background:#e6f5ee;border-left:4px solid #2f9a6a}
+.pt-feedback.bad{background:#fdecea;border-left:4px solid #c24b3a}
+.pt-input{width:9em;padding:8px 12px;border:1px solid #9fb7c0;border-radius:10px;font-size:1.05rem}
+.pt-check{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.92rem}
+.pt-check input{accent-color:#147a83;width:18px;height:18px}
+.pt input[type=range]{accent-color:#147a83;width:100%}
+.pt-eyebrow{letter-spacing:.12em;font-weight:750;font-size:.72rem;color:#479eaa;margin:0}
+
+/* Part 1: continent puzzle */
+.pt-map{display:block;width:100%;height:auto;border-radius:16px;touch-action:none;user-select:none;-webkit-user-select:none}
+.pt-sea{fill:#cfe6f2}
+.pt-grid line{stroke:#a9cde0;stroke-width:1;stroke-dasharray:4 5}
+.pt-grid text{font-size:10px;fill:#5d8aa3}
+.pt-ocean-label{font:italic 600 15px Georgia,serif;fill:#4f84a3;letter-spacing:.2em}
+.pt-land>path:first-child{stroke:#6d5a35;stroke-width:1.2;stroke-linejoin:round}
+.pt-land.sa>path:first-child{fill:#d9c08a}
+.pt-land.af>path:not(.pt-clue){fill:#b9d39a;stroke:#4f6b38;stroke-width:1.2;stroke-linejoin:round}
+.pt-land.movable{cursor:grab}
+.pt-land.movable:active{cursor:grabbing}
+.pt-map.fitted .pt-land.af>path:first-child{stroke:#2f9a6a;stroke-width:2}
+.pt .pt-land path.pt-clue{stroke-width:1.4}
+.pt-land-label{font-size:13px;font-weight:800;fill:#3b3a2b;pointer-events:none;paint-order:stroke;stroke:#fff9;stroke-width:3px}
+.pt-drift{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+.pt-drift label{font-size:.95rem}
+.pt-drift button{align-self:flex-start;margin-top:4px}
+.pt-scale{display:flex;justify-content:space-between;font-size:.78rem;color:#617985}
+
+/* Part 2: seafloor spreading */
+.pt-controls{display:flex;flex-wrap:wrap;gap:14px 26px;margin:12px 0 8px}
+.pt-ridge,.pt-scene,.pt-measure{display:block;width:100%;height:auto;border-radius:14px;background:#f6fafc}
+.pt-axis{stroke:#9fb7c0;stroke-dasharray:3 4}
+.pt-axis-title{font-size:13px;font-weight:700;fill:#40606e}
+.pt-small{font-size:11.5px;fill:#617985}
+.pt-profile{fill:none;stroke:#b55d12;stroke-width:2.2;stroke-linejoin:round}
+.pt-oldfloor{fill:#c9d3da}
+.pt-old-label{fill:#4d5f6a;font-style:italic}
+.pt-ridge-line{stroke:#d1452b;stroke-width:3;stroke-dasharray:7 4}
+.pt-ridge-label{font-size:13px;font-weight:800;fill:#b23a22}
+.pt-spread-arrows path{fill:none;stroke:#40606e;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pt-scalebar line{stroke:#183043;stroke-width:3}
+.pt-scalebar text{font-size:11px;font-weight:700;fill:#183043}
+.pt-compass{display:inline-flex;align-items:center;gap:8px;margin-left:auto;font-size:.95rem}
+.pt-needle{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid #40606e;color:#d1452b;font-size:.85rem;transition:transform .35s}
+.pt-needle.flipped{transform:rotate(180deg)}
+.pt-readout{font-size:.95rem;margin:4px 0}
+.pt-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-size:.88rem;color:#40606e;margin:6px 0}
+.pt-legend.small{font-size:.8rem;margin:0}
+.pt-sw{display:inline-block;width:16px;height:12px;border-radius:3px;border:1px solid #0002;margin-left:6px}
+.pt-sw.normal{background:var(--pt-normal)}.pt-sw.reversed{background:var(--pt-reversed)}
+.pt-sw.ccrust{background:#d8b47c}.pt-sw.ocrust{background:#52606b}.pt-sw.lith{background:#a98467}.pt-sw.asth{background:#f2b27c}.pt-sw.magma{background:#e2532d}
+.pt-age-bar{display:inline-block;width:90px;height:10px;border-radius:5px;background:linear-gradient(90deg,hsl(8 70% 58%),hsl(108 70% 63%),hsl(208 70% 68%))}
+.pt-quiz{background:#f3f7f9;border-radius:12px;padding:6px 16px;margin:14px 0}
+.pt-quiz p{margin:10px 0 4px}
+.pt-speed-cta{margin:18px 0}
+.pt-speed{background:#fffaf0;border:1px solid #f0dfb8;border-radius:14px;padding:6px 18px 14px;margin:18px 0}
+.pt-measure{max-width:560px;background:#fff}
+.pt-measure-line{stroke:#b55d12;stroke-width:2.4;marker-end:none}
+.pt-measure-text{font-size:13px;font-weight:700;fill:#7a3c08}
+.pt-band-edge{stroke:#b55d12;stroke-width:2;stroke-dasharray:4 3}
+.pt-stages{padding-left:1.4em;margin:12px 0}
+.pt-stages li{color:#8aa1ab;margin:6px 0}
+.pt-stages li.now{color:#183043;font-weight:650}
+.pt-stages li.done{color:#183043}
+.pt-stages li.done strong{color:#147a83;margin-left:6px}
+
+/* Part 3: boundary lab */
+.pt-layers{display:block;width:100%;max-width:520px;height:auto;margin:8px 0;border-radius:8px}
+.pt-brace{fill:none;stroke:#183043;stroke-width:1.6}
+.pt-boundary-picker{display:flex;flex-wrap:wrap;gap:12px 26px;margin:14px 0}
+.pt-predict{background:#f3f7f9;border-radius:12px;padding:4px 14px;margin:12px 0}
+.pt-predict p{margin:8px 0 0}
+.pt-predict .pt-row{margin:8px 0}
+.pt .pt-predict button{font-size:.88rem;padding:6px 12px}
+.pt-sky{fill:#f2f8fc}
+.pt-water{fill:#8fc8e8}
+.pt-asth{fill:#f2b27c}
+.pt-lith{fill:#a98467}
+.pt-ocrust{fill:#52606b}
+.pt-ccrust{fill:#d8b47c;stroke:#a8834a;stroke-width:.8}
+.pt-band{fill:#7a8a95}
+.pt-newcrust{fill:#e2532d}
+.pt-magma{fill:#e2532d}
+.pt-magma.soft{opacity:.8}
+.pt-pillow{fill:#e2532d}
+.pt-flow{fill:none;stroke:#c8582b;stroke-width:2;stroke-dasharray:6 6;opacity:.75}
+.pt-dike{fill:none;stroke:#e2532d;stroke-width:3.4;stroke-linecap:round;stroke-dasharray:7 5}
+.pt-fault{fill:none;stroke:#5e4220;stroke-width:1.6;stroke-dasharray:5 3}
+.pt-fold{fill:none;stroke:#9c7640;stroke-width:1.6;opacity:.8}
+.pt-suture{fill:none;stroke:#5e4220;stroke-width:2;stroke-dasharray:6 4}
+.pt-arrow{fill:#ffffffd9;stroke:#183043;stroke-width:1.6;stroke-linejoin:round}
+.pt-volcano path:first-child{fill:#7d6150;stroke:#4c3a2f;stroke-width:1}
+.pt-lava{fill:#e2532d}
+.pt-plume{fill:none;stroke:#8d9aa3;stroke-width:3;stroke-linecap:round;opacity:.7}
+.pt-quake{stroke:#fff;stroke-width:1.5}
+.pt-quake.shallow,.pt-dot.shallow{fill:#f2c230}
+.pt-quake.mid,.pt-dot.mid{fill:#e8792b}
+.pt-quake.deep,.pt-dot.deep{fill:#b8262c}
+.pt-dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-left:6px;border:1.5px solid #fff;box-shadow:0 0 0 1px #0003}
+.pt-scene-label{font-size:14px;font-weight:750;fill:#14303f;paint-order:stroke;stroke:#ffffffd9;stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+.pt-scene-label.small{font-size:12px;font-weight:700}
+.pt-landA{fill:#d7e6bd}
+.pt-landB{fill:#eadcb1}
+.pt-faultline{fill:none;stroke:#6b3d1f;stroke-width:3}
+.pt-road{fill:none;stroke:#4e5960;stroke-width:16}
+.pt-road-line{fill:none;stroke:#f5d76e;stroke-width:2;stroke-dasharray:10 9}
+.pt-fence{fill:none;stroke:#7a5230;stroke-width:3;stroke-dasharray:2 7;stroke-linecap:round}
+.pt-stream{fill:none;stroke:#4a9fd0;stroke-width:6;stroke-linecap:round}
+.pt-marker{fill:#c24b3a;stroke:#fff;stroke-width:1}
+.pt-burst path{fill:#f2c230;stroke:#b8262c;stroke-width:2}
+.pt-burst text{font-size:16px;font-weight:850;fill:#b8262c;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.pt-timebar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:10px 0 4px}
+.pt-grow{flex:1;min-width:160px;display:flex}
+.pt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px}
+.pt-swipe{display:none;font-size:.8rem;color:#617985;margin:4px 0 0}
+.pt-toggles{margin:6px 0 10px;gap:8px 16px}
+.pt-facts{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;background:#f6fafb;border:1px solid #e0eaed;border-radius:14px;padding:12px 18px;margin:12px 0}
+.pt-facts p{margin:4px 0}
+.pt-facts dl{margin:0;display:grid;gap:8px}
+.pt-facts dt{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#617985}
+.pt-facts dd{margin:0;font-size:.95rem}
+
+/* Part 4: boundary detective */
+.pt-progress{display:flex;gap:6px;margin:10px 0}
+.pt-progress span{flex:1;height:6px;border-radius:3px;background:#e3ecef}
+.pt-progress .now{background:#7fc3c6}.pt-progress .done{background:#2f9a6a}.pt-progress .slip{background:#e0a03a}
+.pt-case{background:#f6fafb;border:1px solid #e0eaed;border-radius:14px;padding:12px 18px;margin:10px 0}
+.pt-case-title{font-size:1.2rem;font-weight:800;margin:2px 0 8px}
+.pt-clues{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.pt-clues li{display:flex;gap:10px;align-items:flex-start}
+.pt-clue-n{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#163b4d;color:#fff;font-size:.8rem;font-weight:800;margin-top:2px}
+.pt-answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;margin:12px 0}
+.pt .pt-answers button{border-radius:12px;text-align:left}
+.pt .pt-answers button.right{background:#e6f5ee;border-color:#2f9a6a;color:#1d5e40;opacity:1}
+.pt .pt-answers button.wrong{background:#fdecea;border-color:#e2a59b;color:#8a3226}
+.pt-review{list-style:none;padding:0}
+.pt-review li{padding:8px 0;border-bottom:1px solid #e3ecef}
+
+@media(max-width:760px){
+ .pt-two,.pt-facts{grid-template-columns:1fr}
+ .pt-compass{margin-left:0}
+ .pt-small-text{display:none}
+}
+@media(max-width:640px){
+ .pt-scroll>svg{min-width:640px}
+ .pt-swipe{display:block}
+ .pt-scene-label{font-size:16px}
+ .pt-scene-label.small{font-size:14px}
+ .pt-small{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pt *{transition:none!important;animation:none!important}
+}
