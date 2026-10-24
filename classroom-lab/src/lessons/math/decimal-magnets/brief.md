@@ -1,0 +1,29 @@
+# Lesson brief: Decimal Magnets
+
+- Subject / grade: Math / Grade 5 (confirm placement with the teacher)
+- Student learning objective (observable): Given a whole number or decimal and a call to multiply or divide by 10, 100, 1,000, or 10,000 (written as a number or as a power of ten), the student places the decimal point correctly, adds or removes placeholder zeros, and explains the move in terms of place value ("every digit becomes worth 100 times as much, so it shifts two places").
+- Topic / motivating question: Why does multiplying or dividing by 10, 100, or 1,000 just "move the decimal point," and how do you know which way and how far?
+- Standards (jurisdiction + version/year + exact code + URL; or TBD): TBD. Patterns when multiplying and dividing by powers of ten are a common grade 5 place-value topic, but no code has been checked. Verify against the Oklahoma Academic Standards for Mathematics at https://oklahoma.gov/education/services/standards-learning/oklahoma-academic-standards.html with the teacher before attaching anything.
+- Lesson type: Interactive (browser), modeled on a hands-on whiteboard routine.
+- Target duration: 15–20 minutes as a whole-class line-up; about 10 minutes per practice round.
+- Classroom setting: Projector or interactive whiteboard with students taking turns at the board (whole-class line-up), or individual Chromebooks (practice on my own).
+- Prior knowledge: Place value from millions to thousandths; reading decimals; the idea that each place is worth 10 times the place to its right.
+- Key misconceptions:
+  - Moving the point the wrong way (thinking "multiply" means move left, or not connecting direction to "bigger" and "smaller").
+  - Moving the wrong number of places (not linking the number of zeros, or the exponent, to the number of places).
+  - "Just add a zero": writing 3.4 × 10 as 3.40.
+  - Leaving out placeholder zeros (4.5 × 100 written as 45) or the 0 in the ones place (.045 instead of 0.045).
+  - Thinking the point physically moves, rather than the digits shifting into new places. The activity uses the point-moving shortcut on the board and the place-value chart to show what is really happening.
+  - Comma placement: grouping from the left instead of from the point, keeping old commas after the number changes, or putting commas in the decimal part.
+- Student actions and feedback:
+  - Optional prediction: "Will the answer be bigger or smaller?" with immediate feedback.
+  - Drag, tap, or arrow-key the button-magnet point to a new spot. The board fills in placeholder zeros as the point passes the digits and shows how many places it has moved.
+  - Optional comma step: after the point is right, students tap gaps to put commas back.
+  - Mistake-specific hints (wrong way, wrong count, didn't move, comma errors) with "Try again" or "Show the answer."
+  - On success: the equation, numbered hops showing each place moved, a place-value chart where the digits slide while the point stays put, and notes on placeholder zeros and the "add a zero" trap.
+  - Mystery calls: students see the before and after boards and name the call.
+- Formative assessment / evidence of learning: First-try accuracy and class streak in line-up mode; practice rounds of 10 end with a score, a list of problems, and a tally of mistake types, plus a "retry the ones I missed" option. Nothing is stored after the page closes.
+- Accessibility / device constraints: The magnet is a keyboard slider (arrow keys, Home/End, Enter to check) with a spoken value ("The board reads 407.2"). Comma spots are labeled buttons. Feedback uses a polite live region. The board scales to phone width. Animations are turned off under reduced motion. The optional "read the call aloud" button uses the browser's built-in speech, with no network calls.
+- Reliable educational sources: Activity idea contributed by a classroom teacher through the requester (originator: TBD, name to be confirmed). The mathematics (place value and multiplying or dividing by powers of ten) is standard elementary content. No outside material was copied.
+- Known simplifications and limitations: Numbers are limited to 7 whole-number digits and 4 decimal places. Calls go up to 10,000. Only powers of ten are used, not other multipliers. "Moving the point" is labeled as a shortcut; the chart shows the digits moving.
+- Teacher sign-off needed: Yes. Confirm grade placement, the range of numbers and calls, whether exponent notation fits the class, and the wording of the hints.
