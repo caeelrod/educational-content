@@ -364,3 +364,178 @@
 .hc-art-label{font:600 11px Inter,ui-sans-serif,system-ui,sans-serif;fill:#617985;text-anchor:middle}
 @media(max-width:760px){.hc-journey-grid,.hc-find-grid,.hc-gdetail{grid-template-columns:1fr}.hc-clue-text{font-size:1.1rem}}
 .hc-journey .step-dots{flex-wrap:wrap}
+/* Music Theory Basics */
+.mu{max-width:none;line-height:1.6}
+.mu button{border:1px solid #bed1d7;padding:9px 16px;border-radius:999px;background:#fff;color:#17394e;font-weight:650}
+.mu button:disabled{opacity:.45;cursor:default}
+.mu button:focus-visible,.mu input:focus-visible,.mu [role=button]:focus-visible{outline:3px solid #4aabb1;outline-offset:2px}
+.mu .mu-primary{background:#163b4d;color:#fff;border-color:#163b4d}
+.mu-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mu-modes{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.mu-modes button[aria-pressed=true],.mu-seg button[aria-pressed=true],.mu-chips button[aria-pressed=true],.mu-oct button[aria-pressed=true]{background:#e3f2f1;border-color:#147a83;box-shadow:inset 0 0 0 1px #147a83}
+.mu-soundbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:10px 14px;border-radius:14px;background:#102d41;color:#d7ebf3}
+.mu-soundbar.off{font-size:.9rem}
+.mu .mu-soundbar button{background:#173f56;color:#fff;border-color:#2f5d75;padding:6px 14px}
+.mu .mu-soundbar button.mu-muted{background:#f2b42c;color:#102d41;border-color:#f2b42c}
+.mu-volume{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:650}
+.mu-volume input{accent-color:#ace2d9;width:120px}
+.mu-sound-note{font-size:.84rem;color:#ace2d9}
+.mu-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;margin-bottom:12px}
+.mu-toggles{justify-content:flex-start}
+.mu-seg{display:inline-flex;gap:6px;flex-wrap:wrap}
+.mu .mu-seg button{padding:6px 14px;font-size:.9rem}
+.mu-check{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem}
+.mu-check input{accent-color:#147a83;width:18px;height:18px}
+.mu-card{border-radius:18px;background:#f4f8fb;padding:12px}
+.mu-subhead{margin:22px 0 4px;font-size:1.15rem}
+.mu-hint{font-size:.9rem;color:#526574;margin:8px 0}
+.mu-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0}
+.mu-actions.center{justify-content:center}
+.mu kbd{font:700 .8rem ui-monospace,SFMono-Regular,Menlo,monospace;padding:1px 6px;border:1px solid #bed1d7;border-bottom-width:3px;border-radius:5px;background:#fff}
+/* notation */
+.mu-staff{display:block;width:100%;height:auto;overflow:visible}
+.mu-lines line,.mu-ledger{stroke:#33505f;stroke-width:1.1}
+.mu-lines.faint line{stroke:#c6d6dd}
+.mu-bars line{stroke:#33505f;stroke-width:1.3}.mu-bars rect{fill:#33505f}
+.mu-clef path{fill:none;stroke:#102d41;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.mu-clef circle{fill:#102d41}
+.mu-neutral rect{fill:#102d41}
+.mu-time text{font:800 24px Georgia,'Times New Roman',serif;fill:#102d41;text-anchor:middle;dominant-baseline:central}
+.mu-head ellipse{fill:#102d41}.mu-head .mu-hole{fill:#fff}
+.mu-stem{stroke:#102d41;stroke-width:1.5}
+.mu-flag,.mu-beam,.mu-dot{fill:#102d41}
+.mu-acc path{fill:none;stroke:#102d41;stroke-width:1.3}.mu-acc .mu-acc-bar{stroke-width:2.8}
+.mu-rest{fill:#102d41}.mu-rest-line{fill:none;stroke:#102d41;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.mu-letter{font:800 12px Inter,ui-sans-serif,system-ui,sans-serif;fill:#087c87;text-anchor:middle}
+.mu-slot{fill:transparent}
+.mu-item[role=button]{cursor:pointer}.mu-item[role=button]:hover .mu-slot{fill:#e3f2f1}
+.mu-item:focus{outline:none}.mu-item:focus-visible .mu-slot{fill:#e3f2f1;stroke:#4aabb1;stroke-width:2}
+.mu-item.sel .mu-slot{fill:#fff1cc;stroke:#f2b42c;stroke-width:2}
+.mu-item.on .mu-slot{fill:#fde3ea}
+.mu-item.on .mu-head ellipse:not(.mu-hole),.mu-item.on .mu-stem,.mu-item.on .mu-flag,.mu-item.on .mu-dot{fill:#d2335f;stroke:#d2335f}
+.mu-item.on .mu-stem{fill:none}.mu-item.on .mu-rest{fill:#d2335f;stroke:#d2335f}.mu-item.on .mu-rest-line{fill:none}
+.mu-beam.on{fill:#d2335f}
+.mu-item.hint .mu-slot{fill:none;stroke:#e7a43a;stroke-width:2.5;stroke-dasharray:5 3}
+.mu-glow{fill:#fff1cc;stroke:#f2b42c;stroke-width:2}
+.mu-space-glow{fill:#fff1cc}
+.focus-lines .mu-lines line{stroke:#e7a43a;stroke-width:2.6}
+.focus-bars .mu-bars line{stroke:#e7a43a;stroke-width:3.4}.focus-bars .mu-bars rect{fill:#e7a43a}
+.focus-notes .mu-head ellipse:not(.mu-hole),.focus-notes .mu-flag,.focus-notes .mu-beam,.focus-notes .mu-dot{fill:#b55d12}.focus-notes .mu-stem{stroke:#b55d12}
+.mu-line-names text{font:800 11px Inter,ui-sans-serif,system-ui,sans-serif;fill:#b55d12;text-anchor:end;dominant-baseline:central}
+.mu-glyph{width:100%;height:auto;display:block}
+/* piano */
+.mu-piano-wrap{margin:18px 0 6px}
+.mu-oct{display:flex;gap:8px;margin-bottom:8px}.mu .mu-oct button{flex:1;padding:6px 10px;font-size:.88rem}
+.mu-piano{position:relative;height:170px;user-select:none;-webkit-user-select:none;touch-action:none;-webkit-tap-highlight-color:transparent;border-radius:0 0 12px 12px;background:#102d41;padding:0 0 0;border-top:6px solid #102d41}
+.mu .mu-key{position:absolute;top:0;padding:0;border-radius:0 0 8px 8px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;font-weight:800;transition:background .08s}
+.mu .mu-key.white{height:100%;background:#fff;border:1px solid #9fb2bb;color:#33505f;z-index:1}
+.mu .mu-key.black{height:60%;background:#1c2b33;border:1px solid #0b161c;color:#d7ebf3;z-index:2;font-size:.68rem;box-shadow:0 3px 0 #0b161c}
+.mu .mu-key.white.on{background:#fde3ea;box-shadow:inset 0 -6px 0 #d2335f}
+.mu .mu-key.black.on{background:#d2335f;box-shadow:none}
+.mu .mu-key.hint{animation:mu-hint 1s ease-in-out infinite}
+.mu .mu-key.white.hint{background:#fff1cc;box-shadow:inset 0 -6px 0 #e7a43a}
+.mu .mu-key:focus-visible{outline:3px solid #4aabb1;outline-offset:-4px;z-index:3}
+.mu-key-name{padding-bottom:22px;pointer-events:none}
+.mu-key.black .mu-key-name{padding-bottom:8px}
+.mu-key-mark{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:.6rem;line-height:1.05;font-weight:700;color:#087c87;pointer-events:none}
+@keyframes mu-hint{50%{filter:brightness(.92)}}
+/* pitch explorer */
+.mu-explore-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:start}
+.mu-staff-card .mu-staff{max-width:300px;margin:0 auto}
+.mu-wave-box{margin-top:6px;padding:8px 10px 2px;border-radius:12px;background:#fff}
+.mu-wave{display:block;width:100%;height:auto;overflow:hidden}
+.mu-wave line{stroke:#c6d6dd;stroke-width:1}
+.mu-wave polyline{fill:none;stroke:#147a83;stroke-width:2.6;stroke-linejoin:round}
+.mu-wave.ringing polyline{animation:mu-wave .5s linear infinite}
+@keyframes mu-wave{to{transform:translateX(var(--cyc))}}
+.mu-caption{margin:2px 0 4px;font-size:.84rem;color:#526574;text-align:center}
+.mu-info h3{margin:0 0 6px;font-size:1.3rem}
+.mu-note-name{font-size:2rem!important;letter-spacing:-.02em}.mu-note-name span{font-size:1rem;color:#087c87}
+.mu-now{font-size:1.4rem;font-weight:800;color:#d2335f}
+.mu-facts{display:grid;gap:8px;margin:8px 0 0}
+.mu-facts div{padding:8px 12px;border-radius:10px;background:#f1f6f8}
+.mu-facts dt{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#617985}
+.mu-facts dd{margin:0}
+.mu-chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.mu .mu-chips button{padding:6px 14px;font-size:.92rem}
+.mu-idea{margin-top:10px;padding:14px 18px;border:1px solid #dce6e9;border-radius:16px;background:#fafcfd;animation:mu-rise .3s ease-out}
+.mu-idea-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mu-idea h4{margin:0;font-size:1.15rem}
+.mu-idea p{margin:8px 0}
+.mu-idea .challenge{margin:12px 0 4px}
+/* rhythm builder */
+.mu-tempo{display:inline-flex;flex-direction:column;gap:2px;font-size:.88rem;min-width:220px}.mu-tempo input{accent-color:#147a83}
+.mu-echo{padding:12px 16px;border-radius:14px;background:#fffbea;border:1px solid #ecd98f;margin-bottom:12px}
+.mu-echo p{margin:4px 0}
+.mu-target{margin-top:6px;padding:6px 10px;border-radius:12px;background:#fff}
+.mu-tag{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8a6d0b}
+.mu-builder{padding:10px 12px 14px;border-radius:18px;background:#f4f8fb}
+.mu-builder .mu-staff,.mu-target .mu-staff{max-width:620px;margin:0 auto}
+.mu-counts,.mu-grid{display:grid;max-width:620px;margin:0 auto}
+.mu-count-measure{display:grid;grid-template-columns:repeat(8,1fr);text-align:center;font-weight:800;color:#7a909a}
+.mu-count-measure .and{font-weight:600;font-size:.85rem}
+.mu-count-measure .now{color:#fff;background:#d2335f;border-radius:6px}
+.mu-grid{margin-top:6px}
+.mu-grid-measure{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;min-height:40px;padding:3px;border-radius:10px;background:#fff;border:1px solid #dce6e9}
+.mu .mu-block{border-radius:8px;padding:2px 4px;font-size:.78rem;font-weight:750;background:#cfeae6;border:1px solid #6dbcb3;color:#0f4a52;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:flex;align-items:center;justify-content:center}
+.mu .mu-block.split{background:linear-gradient(90deg,#cfeae6 calc(50% - 1px),#6dbcb3 calc(50% - 1px) calc(50% + 1px),#cfeae6 calc(50% + 1px))}
+.mu .mu-block.rest{background:repeating-linear-gradient(135deg,#f1f6f8 0 6px,#e1eaee 6px 12px);border-color:#b3c5cc;color:#526574}
+.mu .mu-block.sel{outline:3px solid #f2b42c}
+.mu-block.empty{border:1px dashed #b3c5cc;background:none;color:#8aa0aa;font-weight:600}
+.mu-palette{display:grid;gap:8px;margin:14px 0 4px}
+.mu-palette-row{display:flex;flex-wrap:wrap;gap:8px}
+.mu .mu-palette button{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:8px;align-items:center;text-align:left;border-radius:14px;padding:6px 12px 6px 6px;line-height:1.2}
+.mu-pal-glyphs{grid-row:span 2;display:flex;width:44px;height:44px}
+.mu-pal-glyphs .mu-glyph{height:100%;width:auto}
+.mu-pal-name{font-size:.9rem}.mu-pal-beats{font-size:.78rem;font-weight:600;color:#617985}
+.mu-feedback{padding:12px 16px;border-radius:12px;border-left:5px solid;margin:10px 0;animation:mu-rise .3s ease-out}
+.mu-feedback p{margin:4px 0}
+.mu-feedback.right{background:#edf7f4;border-color:#34a58b}
+.mu-feedback.wrong{background:#fdecea;border-color:#c0392b}
+.mu-feedback.shown{background:#eef4fb;border-color:#1f63a8}
+.mu-headline{font-weight:850;font-size:1.1rem}
+/* song reader */
+.mu-score{padding:10px 14px;border-radius:18px;background:#f4f8fb;display:grid;gap:4px}
+.mu-score-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}.mu-score-head strong{font-size:1.15rem}.mu-score-head span{font-size:.82rem;color:#617985}
+.mu-songs-panel{margin-top:10px}
+.mu-songs-panel h3{margin:4px 0 6px;font-size:1.3rem}
+.mu-songs .step-dots{flex-wrap:wrap}
+.mu-songs .lesson-nav{margin:12px 0}
+.mu-play{padding:12px 14px;border-radius:18px;background:#f4f8fb}
+.mu-play .mu-piano{margin-top:10px}
+.mu-progress{height:10px;border-radius:5px;background:#dfe9ed;overflow:hidden;margin:6px 0}.mu-progress span{display:block;height:100%;background:#2f9e74;transition:width .2s}
+/* note game */
+.mu-dots{display:flex;align-items:center;gap:5px}
+.mu-dots>span:not(.mu-dots-text){width:20px;height:8px;border-radius:4px;background:#dfe9ed}
+.mu-dots>span.good{background:#2f9e74}.mu-dots>span.miss{background:#e0913a}.mu-dots>span.now{background:#163b4d}
+.mu-dots-text{margin-left:6px;font-size:.88rem;color:#526574;font-weight:650}
+.mu-clue{position:relative;display:flex;flex-direction:column;gap:2px;padding:14px 56px 14px 18px;margin:6px 0 16px;border-radius:14px;background:#fffbea;border:1px solid #ecd98f;box-shadow:0 6px 0 -2px #ecd98f}
+.mu-clue-label{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8a6d0b}
+.mu-clue-text{margin:0;font-size:1.25rem;font-weight:750;line-height:1.35}
+.mu .mu-speak{position:absolute;top:10px;right:10px;padding:4px 10px;border-color:#ecd98f;background:#fff8d6}
+.mu-game-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.mu-game-card{min-height:220px;display:flex;align-items:center;justify-content:center}
+.mu-game-card .mu-staff{max-width:260px}
+.mu-big-glyph{width:150px}
+.mu-ear{text-align:center}.mu .mu-big{font-size:1.1rem;padding:14px 22px}
+.mu-answers{display:flex;flex-wrap:wrap;gap:8px}
+.mu-answers.letters{display:grid;grid-template-columns:repeat(7,1fr)}
+.mu .mu-answers button{font-size:1.05rem;padding:10px 12px;min-height:46px}
+.mu .mu-answers.letters button{font-size:1.3rem;padding:8px 0;border-radius:12px}
+.mu .mu-answers button.right{background:#edf7f4;border-color:#34a58b;box-shadow:inset 0 0 0 2px #34a58b;opacity:1}
+.mu .mu-answers button.blink{animation:mu-blink 1s ease-in-out 3;border-color:#1f63a8;box-shadow:inset 0 0 0 2px #1f63a8}
+.mu-shake{animation:mu-shake .4s}
+.mu-summary{text-align:center;padding:10px 0}
+.mu-stars{font-size:2.4rem;color:#e7a43a;letter-spacing:.15em;margin:0}
+.mu-score{font-size:1.2rem}
+.mu-summary .mu-score strong{font-size:2rem;color:#087c87}
+.mu-review{text-align:left;max-width:460px;margin:12px auto;padding-left:1.6em}
+.mu-review .good span{color:#2f9e74;font-weight:800}.mu-review .miss span{color:#b55d12;font-weight:800}
+@keyframes mu-rise{from{transform:translateY(8px);opacity:0}}
+@keyframes mu-blink{50%{opacity:.35}}
+@keyframes mu-shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+@media(max-width:760px){.mu-explore-grid,.mu-game-grid{grid-template-columns:1fr}.mu-clue-text{font-size:1.1rem}}
+.mu-block .short{display:none}
+.mu-near{margin-top:6px;background:#fff;border-radius:12px}
+@media(max-width:640px){.mu-block .long{display:none}.mu-block .short{display:inline}.mu-tempo{flex-basis:100%}.mu-palette-row{display:grid;grid-template-columns:1fr 1fr}.mu .mu-palette button{padding-right:6px}.mu-modes{display:grid;grid-template-columns:1fr 1fr}.mu .mu-modes button{padding:9px 8px;font-size:.92rem}.mu-count-measure .and{font-size:.7rem}}
+@media(max-width:640px){.mu-piano{height:150px}.mu-volume input{width:90px}.mu-sound-note{flex-basis:100%}.mu .mu-answers.letters button{font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){.mu *,.mu *::before{animation:none!important;transition:none!important}}
