@@ -1,4 +1,4 @@
-# Classroom Lab
+# Learning Lab
 
 A reusable, AI-assisted platform for creating interactive learning materials, organized into sections by level. Its audience is learners and the people who teach them; its contributors may include humans and coding agents.
 
