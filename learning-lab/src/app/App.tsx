@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { lessons, type Lesson } from '../registry';
 import { sections, type Section } from '../sections';
-const icon = (s: Lesson['subject']) => s === 'math' ? '◩' : s === 'music' ? '♪' : '☁';
+const icon = (s: Lesson['subject']) => s === 'math' ? '◩' : s === 'music' ? '♪' : s === 'english' ? '✎' : '☁';
 const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 export default function App() {
   const [section, setSection] = useState<Section | null>(null);

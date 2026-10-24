@@ -6,10 +6,11 @@ import DecimalMagnets from './lessons/grade-school/math/decimal-magnets/Lesson';
 import WaterCycle from './lessons/grade-school/science/water-cycle/Lesson';
 import HumanCell from './lessons/grade-school/science/human-cell/Lesson';
 import MusicTheory from './lessons/grade-school/music/music-theory-basics/Lesson';
+import PersuasiveWriting from './lessons/middle-school/english/persuasive-writing/Lesson';
 import Induction from './lessons/college/math/induction/Lesson';
 import GeometricSeries from './lessons/college/math/geometric-series/Lesson';
 
-export type Subject = 'math' | 'science' | 'music';
+export type Subject = 'math' | 'science' | 'music' | 'english';
 export type Lesson = {
   id: string;
   title: string;
@@ -44,6 +45,9 @@ export const lessons: Lesson[] = [
   { id: 'music-theory-basics', title: 'Music Theory Basics', section: 'grade-school', subject: 'music',
     summary: 'Play a piano to explore pitch, build rhythms from long and short notes, read a real song, and test your eyes and ears.',
     durationMinutes: 35, type: 'interactive', standards: [], status: 'demo', Component: MusicTheory },
+  { id: 'persuasive-writing', title: 'Persuasive Writing', section: 'middle-school', subject: 'english',
+    summary: 'Spot the claim, evidence, and reasoning in real arguments, weigh strong and weak evidence, answer the other side, and build an argument of your own.',
+    durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: PersuasiveWriting },
   { id: 'induction', title: 'Proof by Induction', section: 'college', subject: 'math',
     summary: 'See why induction is not circular, build three proofs line by line, tile any board with L-shapes, and find the flaw in broken proofs.',
     durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: Induction },
