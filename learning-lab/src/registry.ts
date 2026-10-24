@@ -7,6 +7,7 @@ import WaterCycle from './lessons/grade-school/science/water-cycle/Lesson';
 import HumanCell from './lessons/grade-school/science/human-cell/Lesson';
 import MusicTheory from './lessons/grade-school/music/music-theory-basics/Lesson';
 import Induction from './lessons/college/math/induction/Lesson';
+import GeometricSeries from './lessons/college/math/geometric-series/Lesson';
 
 export type Subject = 'math' | 'science' | 'music';
 export type Lesson = {
@@ -45,5 +46,8 @@ export const lessons: Lesson[] = [
     durationMinutes: 35, type: 'interactive', standards: [], status: 'demo', Component: MusicTheory },
   { id: 'induction', title: 'Proof by Induction', section: 'college', subject: 'math',
     summary: 'See why induction is not circular, build three proofs line by line, tile any board with L-shapes, and find the flaw in broken proofs.',
-    durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: Induction }
+    durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: Induction },
+  { id: 'geometric-series', title: 'Geometric Series', section: 'college', subject: 'math',
+    summary: 'See why infinitely many terms can add up to a finite number, derive the sum formula, and learn to read any geometric series off its sigma notation.',
+    durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: GeometricSeries }
 ];
