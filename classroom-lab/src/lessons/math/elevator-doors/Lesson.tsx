@@ -87,7 +87,7 @@ export default function ElevatorDoors() {
   </div>}
 
   <div aria-live="polite">
-   {last && !shortcut && <div className="challenge">
+   {last && !shortcut && <div className={`challenge${last.predictedYes === last.isFactor ? '' : ' elev-wrong'}`}>
     <strong>{last.predictedYes === last.isFactor ? 'Your prediction was right. ' : 'Not quite. '}</strong>
     {last.isFactor
      ? last.partner === last.k

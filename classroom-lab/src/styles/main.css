@@ -33,6 +33,7 @@
 .elev-choices{display:flex;justify-content:center;gap:14px}
 .elev-choices button{min-width:140px}
 .elev-puzzle{border-left-color:#b55d12;background:#fdf3e8}
+.elev-wrong{border-left-color:#c0392b;background:#fdecea}
 .elev-puzzle div{margin-top:10px}
 .elev-list{font-size:1.4rem;font-weight:800}
 .elev-history{margin-top:20px;color:#405766}
