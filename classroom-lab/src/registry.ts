@@ -4,8 +4,9 @@ import ElevatorDoors from './lessons/math/elevator-doors/Lesson';
 import DecimalMagnets from './lessons/math/decimal-magnets/Lesson';
 import WaterCycle from './lessons/science/water-cycle/Lesson';
 import HumanCell from './lessons/science/human-cell/Lesson';
+import MusicTheory from './lessons/music/music-theory-basics/Lesson';
 
-export type Subject = 'math' | 'science';
+export type Subject = 'math' | 'science' | 'music';
 export type Lesson = {
   id: string;
   title: string;
@@ -34,5 +35,8 @@ export const lessons: Lesson[] = [
     durationMinutes: 15, type: 'interactive', standards: [], status: 'demo', Component: WaterCycle },
   { id: 'human-cell', title: 'Inside a Human Cell', subject: 'science',
     summary: 'Zoom into the parts of a cell, follow a protein on its journey, and meet the many kinds of cells in your body.',
-    durationMinutes: 30, type: 'interactive', standards: [], status: 'demo', Component: HumanCell }
+    durationMinutes: 30, type: 'interactive', standards: [], status: 'demo', Component: HumanCell },
+  { id: 'music-theory-basics', title: 'Music Theory Basics', subject: 'music',
+    summary: 'Play a piano to explore pitch, build rhythms from long and short notes, read a real song, and test your eyes and ears.',
+    durationMinutes: 35, type: 'interactive', standards: [], status: 'demo', Component: MusicTheory }
 ];
