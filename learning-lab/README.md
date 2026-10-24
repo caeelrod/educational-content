@@ -26,7 +26,7 @@ npm run build
 
 ## Current lessons
 - Grade School: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
-- Middle School: Persuasive Writing.
+- Middle School: Persuasive Writing, Ratios and Proportions.
 - High School: Newton's Laws of Motion.
 - College: Proof by Induction, Geometric Series.
 
