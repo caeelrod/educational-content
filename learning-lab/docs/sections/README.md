@@ -5,6 +5,7 @@ Learning Lab groups lessons into sections. A section serves one audience and lev
 | Section | Id | Guide |
 | --- | --- | --- |
 | Grade School | `grade-school` | [grade-school.md](grade-school.md) |
+| Middle School | `middle-school` | [middle-school.md](middle-school.md) |
 | College | `college` | [college.md](college.md) |
 
 ## What a section guide defines
