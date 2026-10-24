@@ -3,6 +3,7 @@ import FractionExplorer from './lessons/math/fraction-explorer/Lesson';
 import ElevatorDoors from './lessons/math/elevator-doors/Lesson';
 import DecimalMagnets from './lessons/math/decimal-magnets/Lesson';
 import WaterCycle from './lessons/science/water-cycle/Lesson';
+import HumanCell from './lessons/science/human-cell/Lesson';
 
 export type Subject = 'math' | 'science';
 export type Lesson = {
@@ -30,5 +31,8 @@ export const lessons: Lesson[] = [
     type: 'activity', standards: [], status: 'demo', Component: DecimalMagnets },
   { id: 'water-cycle', title: 'The Water Cycle', subject: 'science',
     summary: 'Follow water through evaporation, condensation, and precipitation.',
-    durationMinutes: 15, type: 'interactive', standards: [], status: 'demo', Component: WaterCycle }
+    durationMinutes: 15, type: 'interactive', standards: [], status: 'demo', Component: WaterCycle },
+  { id: 'human-cell', title: 'Inside a Human Cell', subject: 'science',
+    summary: 'Zoom into the parts of a cell, follow a protein on its journey, and meet the many kinds of cells in your body.',
+    durationMinutes: 30, type: 'interactive', standards: [], status: 'demo', Component: HumanCell }
 ];
