@@ -24,7 +24,7 @@ npm run build
 
 ## Current lessons
 - Grade School: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
-- College: Proof by Induction.
+- College: Proof by Induction, Geometric Series.
 
 **All are demos, not independently validated curriculum.** Do not assume standards alignment.
 

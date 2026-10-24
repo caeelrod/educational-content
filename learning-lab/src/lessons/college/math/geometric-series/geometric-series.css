@@ -1,0 +1,142 @@
+/* Geometric Series lesson. Everything is scoped under .gs so it can't touch other lessons. */
+.gs{max-width:none;line-height:1.6}
+.gs h2{font-size:1.55rem;line-height:1.3}
+.gs h3{font-size:1.15rem;margin:10px 0}
+.gs button{border:1px solid #bed1d7;padding:9px 16px;border-radius:999px;background:#fff;color:#17394e;font-weight:650}
+.gs button:disabled{opacity:.45;cursor:default}
+.gs button[aria-pressed=true]{background:#e3f2f1;border-color:#147a83;box-shadow:inset 0 0 0 1px #147a83}
+.gs button:focus-visible,.gs input:focus-visible{outline:3px solid #4aabb1;outline-offset:2px}
+.gs .gs-primary{background:#163b4d;color:#fff;border-color:#163b4d}
+.gs .gs-link{border:0;background:none;padding:6px 2px;color:#087c87;text-decoration:underline}
+.gs-modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:18px 0 22px}
+.gs-modes button{padding:10px 10px;font-size:.92rem}
+@media(min-width:900px){.gs-modes{grid-template-columns:repeat(5,1fr)}}
+.gs-modes-next{display:flex;justify-content:flex-end;margin-top:22px}
+.gs-prereq{font-size:.9rem;color:#4c6473;background:#f3f7f9;border-radius:10px;padding:10px 14px}
+.gs-panel{border-top:1px solid #e3ecef;padding-top:18px}
+.gs-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:26px;align-items:start;margin-top:16px}
+.gs-side>p{margin:12px 0}
+.gs-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+.gs-seg,.gs-chips{display:flex;flex-wrap:wrap;gap:8px}
+.gs-seg button,.gs-chips button{padding:6px 14px;font-size:.92rem}
+.gs-chips button{padding:4px 11px;font-size:.85rem}
+.gs-controls{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-start;margin:6px 0 10px}
+.gs-controls>div{display:flex;flex-direction:column;gap:8px}
+.gs-grow{flex:1;min-width:230px}
+.gs-grow input[type=range]{width:100%;accent-color:#147a83}
+.gs input[type=range]{accent-color:#147a83}
+.gs-label{font-weight:650;font-size:.92rem}
+.gs-input{width:9em;padding:8px 12px;border:1px solid #9fb7c0;border-radius:10px;font-size:1.05rem}
+.gs-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.gs-center{text-align:center}
+
+/* Typeset math */
+.gs-var{font-family:"Cambria Math",Cambria,"Times New Roman",serif;font-size:1.08em}
+.gs-frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .15em;line-height:1.15;font-size:.92em}
+.gs-frac-top{padding:0 .2em;border-bottom:1.5px solid currentColor}
+.gs-frac-bot{padding:0 .2em}
+.gs-num{white-space:nowrap}
+.gs-sigma{display:inline-flex;align-items:center;gap:.25em;vertical-align:middle}
+.gs-sigma-sym{display:inline-flex;flex-direction:column;align-items:center;line-height:1}
+.gs-sigma-big{font-size:2.1em;line-height:.95}
+.gs-sigma-to,.gs-sigma-from{font-size:.72em}
+.gs sup,.gs sub{font-size:.72em}
+.gs-series{font-size:1.05rem;overflow-x:auto;padding:4px 0}
+.gs-series.big{font-size:1.2rem}
+.gs-formula{font-size:1.08rem;line-height:2.2}
+.gs-boxed{display:inline-block;border:2px solid #147a83;border-radius:10px;padding:2px 10px;margin-top:4px}
+.gs-hl{background:#fff1d6;border-radius:4px;padding:0 3px}
+
+/* Figures */
+.gs-figure{margin:0}
+.gs-figure svg{width:100%;height:auto;display:block}
+.gs-figure.wide{margin:14px 0}
+.gs-figure figcaption{font-size:.85rem;color:#617985;margin-top:6px}
+.gs-frame{fill:#fff;stroke:#244758;stroke-width:2}
+.gs-piece rect{fill:#147a83;stroke:#fff;stroke-width:1.5}
+.gs-piece.alt rect{fill:#40a8ac}
+.gs-piece text{fill:#fff;font-weight:750}
+.gs-twin-a rect{fill:#f4c58a;stroke:#fff;stroke-width:1.5}
+.gs-twin-b rect{fill:#c9b6e4;stroke:#fff;stroke-width:1.5}
+.gs-leftover rect{fill:#fff;stroke:#b55d12;stroke-width:2;stroke-dasharray:5 4}
+.gs-leftover text{fill:#b55d12;font-weight:700}
+.gs-new{animation:gs-in .45s ease-out}
+@keyframes gs-in{from{opacity:0}to{opacity:1}}
+.gs-axis{stroke:#244758;stroke-width:1.5}
+.gs-tick line{stroke:#244758}
+.gs-tick text,.gs-axis-title{font-size:12px;fill:#526574}
+.gs-target{stroke:#b55d12;stroke-width:2;stroke-dasharray:6 5}
+.gs-target-label{font-size:13px;fill:#b55d12;font-weight:700}
+.gs-gapbar{stroke:#f2b42c;stroke-width:8;stroke-linecap:round;opacity:.75}
+.gs-gap-label{font-size:12.5px;fill:#8a5a00;font-weight:650}
+.gs-hop{fill:none;stroke:#7fc3c6;stroke-width:1.6}
+.gs-hop.last{stroke:#147a83;stroke-width:2.6}
+.gs-dot{fill:#40a8ac}
+.gs-start{fill:#244758}
+.gs-now{fill:#163b4d;stroke:#fff;stroke-width:2}
+.gs-now-label{font-size:13px;font-weight:700;fill:#163b4d}
+.gs-path{fill:none;stroke:#7fc3c6;stroke-width:2}
+.gs-ball{fill:#b55d12}
+
+/* Readouts and feedback */
+.gs-readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.gs-readout>div{background:#f3f7f9;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column}
+.gs-readout span{font-size:.8rem;color:#526574}
+.gs-readout strong{font-size:1.25rem}
+.gs-explain{background:#f6fafb;border:1px solid #e0eaed;border-radius:14px;padding:4px 18px;margin:14px 0}
+.gs-takeaway{background:#edf7f4;border-left:4px solid #34a58b;padding:4px 18px;border-radius:8px;margin:18px 0}
+.gs-trap{background:#fff6e8;border-left:4px solid #e0a03a;padding:2px 16px;border-radius:8px}
+.gs-aside,.gs-note-small{font-size:.9rem;color:#526574}
+.gs-feedback{border-radius:10px;padding:10px 14px;margin:10px 0}
+.gs-feedback.good{background:#e6f5ee;border-left:4px solid #2f9a6a}
+.gs-feedback.bad{background:#fdecea;border-left:4px solid #c24b3a}
+.gs-feedback.info{background:#eef4f8;border-left:4px solid #4a7fa6}
+.gs-predict{background:#f3f7f9;border-radius:12px;padding:10px 14px;margin:12px 0}
+.gs-predict .gs-row{margin:8px 0 2px}
+.gs-table-wrap{overflow-x:auto}
+.gs-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.92rem;margin:8px 0}
+.gs-table.narrow{width:auto}
+.gs-table caption{text-align:left;font-weight:650;font-size:.85rem;color:#526574;padding-bottom:4px}
+.gs-table th,.gs-table td{border-bottom:1px solid #e3ecef;padding:6px 10px;text-align:right}
+.gs-table th:first-child,.gs-table td:first-child{text-align:left}
+
+/* Derivation grid */
+.gs-step-title{margin-top:4px}
+.gs-grid{display:grid;gap:8px 6px;align-items:stretch;margin:14px 0;overflow-x:auto}
+.gs-rowlabel{display:flex;align-items:center;justify-content:flex-end;font-weight:650;white-space:nowrap;padding-right:4px}
+.gs-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px 2px;border-radius:10px;background:#e8f4f4;border:1px solid #c6e2e2;min-width:0;transition:opacity .3s,background .3s}
+.gs-cell-sym{font-weight:650;white-space:nowrap}
+.gs-cell-val{font-size:.85rem;color:#40606e}
+.gs-cancel{opacity:.4;background:#f1f4f5;border-style:dashed;text-decoration:line-through}
+.gs-keep{background:#fff1d6;border-color:#e0a03a}
+.gs-zero{color:#8aa1ab;background:#f6f8f9;border-style:dashed}
+.gs-diff{margin-top:6px}
+
+/* Practice */
+.gs-progress{display:flex;gap:6px}
+.gs-progress span{flex:1;height:6px;border-radius:3px;background:#e3ecef}
+.gs-progress .now{background:#7fc3c6}.gs-progress .done{background:#2f9a6a}.gs-progress .slip{background:#e0a03a}
+.gs-eyebrow{letter-spacing:.12em;font-weight:750;font-size:.72rem;color:#479eaa;margin:10px 0 0}
+.gs-problem{font-size:1.5rem;text-align:center;padding:14px;background:#f6fafb;border-radius:14px;margin:8px 0;overflow-x:auto}
+.gs-stages{padding-left:1.4em;margin:12px 0}
+.gs-stages li{color:#8aa1ab;margin:4px 0}
+.gs-stages li.now{color:#183043;font-weight:650}
+.gs-stages li.done{color:#183043}
+.gs-stages li.done strong{color:#147a83;margin-left:6px}
+.gs-review{list-style:none;padding:0}
+.gs-review li{padding:8px 0;border-bottom:1px solid #e3ecef;font-size:1.05rem}
+
+@media(max-width:700px){
+ .gs-two{grid-template-columns:1fr}
+ .gs-figure:not(.wide){max-width:340px;margin:0 auto}
+ .gs-problem{font-size:1.25rem}
+ .gs-grid{font-size:.85rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .gs-new{animation:none}
+ .gs-cell{transition:none}
+}
+@media(max-width:560px){
+ .gs-grid{gap:6px 4px;font-size:.8rem}
+ .gs-rowlabel{font-size:.78rem}
+}
