@@ -1,6 +1,6 @@
 # AI Agent Operating Instructions
 
-You are contributing to Classroom Lab, a library of interactive learning experiences organized into sections by level (see `docs/sections/`). The first section is Grade School; more advanced sections will follow.
+You are contributing to Learning Lab, a library of interactive learning experiences organized into sections by level (see `docs/sections/`). The first section is Grade School; more advanced sections will follow.
 
 ## Mission
 Produce accurate, engaging, accessible educational material that stays under the control of the people who teach it. Favor student discovery over passive exposition.

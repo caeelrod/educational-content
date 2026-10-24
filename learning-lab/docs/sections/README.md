@@ -1,6 +1,6 @@
 # Sections
 
-Classroom Lab groups lessons into sections. A section serves one audience and level, so the platform can hold grade-school activities and much more advanced material side by side without one set of rules limiting the other.
+Learning Lab groups lessons into sections. A section serves one audience and level, so the platform can hold grade-school activities and much more advanced material side by side without one set of rules limiting the other.
 
 | Section | Id | Guide |
 | --- | --- | --- |
