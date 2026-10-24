@@ -1,0 +1,178 @@
+/* Newton's Laws lesson. Everything is scoped under .nl so it can't touch other lessons. */
+.nl{max-width:none;line-height:1.6}
+.nl h2{font-size:1.55rem;line-height:1.3}
+.nl h3{font-size:1.15rem;margin:22px 0 8px}
+.nl button{border:1px solid #bed1d7;padding:9px 16px;border-radius:999px;background:#fff;color:#17394e;font-weight:650}
+.nl button:disabled{opacity:.45;cursor:default}
+.nl button[aria-pressed=true]{background:#e3f2f1;border-color:#147a83;box-shadow:inset 0 0 0 1px #147a83}
+.nl button:focus-visible,.nl input:focus-visible{outline:3px solid #4aabb1;outline-offset:2px}
+.nl .nl-primary{background:#163b4d;color:#fff;border-color:#163b4d}
+.nl .nl-primary[aria-pressed=true]{background:#163b4d;color:#fff}
+.nl .nl-hold{min-width:150px;touch-action:none;user-select:none;-webkit-user-select:none}
+.nl .nl-hold[aria-pressed=true]{background:#2563a8;color:#fff;border-color:#2563a8}
+.nl .nl-link{border:0;background:none;padding:6px 2px;color:#087c87;text-decoration:underline}
+.nl-modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0 22px}
+.nl-modes button{padding:10px 10px;font-size:.92rem}
+@media(min-width:900px){.nl-modes{grid-template-columns:repeat(3,1fr)}}
+.nl-modes-next{display:flex;justify-content:flex-end;margin-top:22px}
+.nl-prereq{font-size:.9rem;color:#4c6473;background:#f3f7f9;border-radius:10px;padding:10px 14px}
+.nl-note-small{font-size:.85rem;color:#617985;margin-top:26px}
+.nl-panel{border-top:1px solid #e3ecef;padding-top:18px}
+.nl-steps{margin:8px 0 14px;padding-left:1.4em}
+.nl-steps li{margin:3px 0}
+.nl-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.nl-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+.nl-small button{padding:6px 13px;font-size:.9rem}
+.nl-seg,.nl-chips{display:flex;flex-wrap:wrap;gap:8px}
+.nl-seg button{padding:6px 14px;font-size:.92rem}
+.nl-controls{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-start;margin:10px 0}
+.nl-controls>div{display:flex;flex-direction:column;gap:8px}
+.nl-grow{flex:1;min-width:230px}
+.nl-grow input[type=range]{width:100%;accent-color:#147a83}
+.nl-label{font-weight:650;font-size:.92rem}
+.nl-hint{font-size:.88rem;color:#526574;margin:4px 0}
+.nl-check{display:flex;align-items:center;gap:6px;font-size:.92rem}
+.nl-check input{accent-color:#147a83;width:18px;height:18px}
+.nl-input{width:9em;padding:8px 12px;border:1px solid #9fb7c0;border-radius:10px;font-size:1.05rem}
+.nl-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nl-var{font-family:"Cambria Math",Cambria,"Times New Roman",serif;font-size:1.08em}
+.nl sub,.nl sup{font-size:.72em}
+.nl-eq{white-space:nowrap;font-weight:650}
+.nl-formula{background:#f3f7f9;border-radius:12px;padding:10px 14px;font-size:1.02rem}
+
+/* Readouts and feedback */
+.nl-readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
+.nl-readout>div{background:#f3f7f9;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column}
+.nl-readout span{font-size:.8rem;color:#526574}
+.nl-readout strong{font-size:1.2rem;font-variant-numeric:tabular-nums}
+.nl-explain{background:#f6fafb;border:1px solid #e0eaed;border-radius:14px;padding:4px 18px;margin:14px 0}
+.nl-takeaway{background:#edf7f4;border-left:4px solid #34a58b;padding:4px 18px;border-radius:8px;margin:18px 0}
+.nl-feedback{border-radius:10px;padding:10px 14px;margin:10px 0}
+.nl-feedback ul{margin:0;padding-left:1.2em}.nl-feedback li{margin:4px 0}.nl-feedback p{margin:4px 0}
+.nl-feedback.good{background:#e6f5ee;border-left:4px solid #2f9a6a}
+.nl-feedback.bad{background:#fdecea;border-left:4px solid #c24b3a}
+.nl-feedback.info{background:#eef4f8;border-left:4px solid #4a7fa6}
+.nl-predict{background:#fff6e8;border:1px solid #f1d6a8;border-radius:12px;padding:10px 14px;margin:12px 0}
+.nl-predict .nl-row{margin:8px 0 2px}
+.nl-predict-table{border-collapse:collapse;margin-top:8px}
+.nl-predict-table th{text-align:left;font-weight:650;padding:6px 12px 6px 0;white-space:nowrap}
+.nl-predict-table td{padding:4px 0}
+.nl-predict-table button{padding:5px 12px;font-size:.88rem}
+.nl button.right{background:#e6f5ee;border-color:#2f9a6a;box-shadow:inset 0 0 0 1px #2f9a6a}
+.nl button.wrong{background:#fdecea;border-color:#c24b3a;box-shadow:inset 0 0 0 1px #c24b3a}
+
+/* Figures */
+.nl-figure{margin:12px 0}
+.nl-figure svg{width:100%;height:auto;display:block}
+.nl-figure figcaption{font-size:.85rem;color:#617985;margin-top:6px}
+.nl-axis{stroke:#244758;stroke-width:1.5}
+.nl-tick line{stroke:#c3d1d7}
+.nl-tick line.zero{stroke:#244758}
+.nl-tick text,.nl-axis-title{font-size:12px;fill:#526574}
+.nl-guide{stroke:#b55d12;stroke-width:2;stroke-dasharray:6 5}
+.nl-guide-label{font-size:12.5px;fill:#b55d12;font-weight:700}
+.nl-trace{fill:none;stroke:#147a83;stroke-width:2.5}
+.nl-trace-dot{fill:#163b4d;stroke:#fff;stroke-width:2}
+.nl-fit{stroke:#b55d12;stroke-width:2;stroke-dasharray:7 5}
+.nl-pt{fill:#147a83;stroke:#fff;stroke-width:1.5}
+.nl-pt.mixed{fill:#8aa1ab}
+
+/* Force arrows: one color per kind of force */
+.nl-arrow line{stroke-width:4;stroke-linecap:round}
+.nl-arrow text{font-size:13px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
+.nl-f-applied line{stroke:#2563a8}.nl-f-applied polygon,.nl-f-applied text{fill:#2563a8}
+.nl-f-friction line{stroke:#b8560f}.nl-f-friction polygon,.nl-f-friction text{fill:#b8560f}
+.nl-f-gravity line{stroke:#6a42a8}.nl-f-gravity polygon,.nl-f-gravity text{fill:#6a42a8}
+.nl-f-normal line{stroke:#23845a}.nl-f-normal polygon,.nl-f-normal text{fill:#23845a}
+.nl-f-tension line{stroke:#8a6400}.nl-f-tension polygon,.nl-f-tension text{fill:#8a6400}
+.nl-f-air line{stroke:#0f7f8f}.nl-f-air polygon,.nl-f-air text{fill:#0f7f8f}
+.nl-f-net line{stroke:#183043;stroke-width:3}.nl-f-net polygon,.nl-f-net text{fill:#183043}
+.nl-zero-net{font-size:13px;font-weight:700;fill:#183043}
+
+/* First law floor and block */
+.nl-floor{fill:#cfd8dc}
+.nl-floor-wood{fill:#c99a63}.nl-floor-carpet{fill:#9a6f8f}.nl-floor-ice{fill:#cfeaf5}.nl-floor-none{fill:#e9eef2}.nl-floor-snow{fill:#eef4f7}
+.nl-block{fill:#7d5a3c;stroke:#4a3320;stroke-width:2}
+.nl-block-label{fill:#fff;font-weight:750;font-size:13px}
+
+/* Cart lab */
+.nl-rail{fill:#9fb7c0}.nl-rail.rough{fill:#8d7b68}
+.nl-finish{stroke:#b55d12;stroke-width:2;stroke-dasharray:4 4}
+.nl-cart{fill:#147a83}
+.nl-mass-block{fill:#5b6770;stroke:#fff;stroke-width:1}
+.nl-wheel{fill:#183043}
+.nl-strobe{fill:#b55d12}
+.nl-table-wrap{overflow-x:auto;position:relative}
+.nl-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.92rem;margin:8px 0}
+.nl-table th,.nl-table td{border-bottom:1px solid #e3ecef;padding:6px 10px;text-align:right}
+.nl-table th:first-child,.nl-table td:first-child{text-align:left}
+.nl-table th{font-size:.85rem;color:#40606e}
+
+/* Third law */
+.nl-skater rect{fill:#2563a8}.nl-skater.b rect{fill:#b8560f}
+.nl-skater circle{fill:#f0c9a0;stroke:#6b4a2f;stroke-width:1.5}
+.nl-skater .nl-limb{stroke:#183043;stroke-width:4;stroke-linecap:round}
+.nl-skater text{font-size:13px;font-weight:700;fill:#183043}
+.nl-centerline{stroke:#526574;stroke-width:2}
+.nl-vel{font-size:13px;font-weight:700;fill:#183043}
+.nl-quiz{padding-left:1.3em}
+.nl-quiz>li{margin:14px 0}
+.nl-quiz p{margin:4px 0}
+.nl-options{display:flex;flex-direction:column;gap:8px;align-items:stretch;margin:8px 0}
+.nl-options button{text-align:left;border-radius:12px}
+
+/* Free-body diagrams */
+.nl-fbd-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:start}
+.nl-fbd-grid h3{margin-top:4px}
+.nl-fbd-grid .nl-label{display:block;margin:12px 0 8px}
+.nl-scene-svg{width:100%;height:auto;display:block;background:#f3f8fb;border-radius:12px}
+.nl-motion{font-size:.92rem;color:#40606e}
+.nl-table-top{fill:#8b6a4a}
+.nl-object{fill:#147a83;stroke:#0d4f55;stroke-width:2}
+.nl-person circle{fill:#f0c9a0;stroke:#183043;stroke-width:2}
+.nl-person line{stroke:#183043;stroke-width:4;stroke-linecap:round}
+.nl-velocity line{stroke:#8aa1ab;stroke-width:3}.nl-velocity polygon{fill:#8aa1ab}
+.nl-velocity text{font-size:12px;fill:#526574;font-weight:650}
+.nl-dash{stroke:#8aa1ab;stroke-width:2;stroke-dasharray:4 5;fill:none}
+.nl-cord{stroke:#183043;stroke-width:2.5}
+.nl-bulb{fill:#f2c94c}
+.nl-car{fill:#fff;stroke:#244758;stroke-width:3}
+.nl-fbd{width:100%;max-width:220px;margin:auto}
+.nl-fbd-dot{fill:#183043}
+.nl-chip{padding:6px 12px!important;font-size:.88rem}
+.nl-progress{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.nl-progress button{width:40px;height:40px;padding:0;border-radius:50%}
+.nl-progress button.first,.nl-progress button.later{background:#e6f5ee;border-color:#2f9a6a}
+.nl-progress button.shown{background:#fff1d6;border-color:#e0a03a}
+
+/* Elevator */
+.nl-elev-grid{display:grid;grid-template-columns:200px minmax(0,1fr) 200px;gap:18px;align-items:start;margin:12px 0}
+.nl-shaft{fill:#e9eef2}
+.nl-floorline line{stroke:#8aa1ab;stroke-width:2}
+.nl-floorline text{font-size:11px;fill:#526574}
+.nl-scale{fill:#183043}
+.nl-scale-display{background:#102d41;color:#d7ebf3;border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;margin-top:12px}
+.nl-scale-display span{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.nl-scale-display strong{font:700 2.2rem ui-monospace,SFMono-Regular,Menlo,monospace;color:#7ff0c7;font-variant-numeric:tabular-nums}
+.nl-scale-display small{font-size:.85rem;color:#ace2d9}
+.nl-phase{margin:12px 0 0;font-size:1rem}
+
+/* Practice */
+.nl-progress-bar{display:flex;gap:6px}
+.nl-progress-bar span{flex:1;height:6px;border-radius:3px;background:#e3ecef}
+.nl-progress-bar .now{background:#7fc3c6}.nl-progress-bar .done{background:#2f9a6a}.nl-progress-bar .slip{background:#e0a03a}
+.nl-eyebrow{letter-spacing:.12em;font-weight:750;font-size:.72rem;color:#479eaa;margin:10px 0 0}
+.nl-problem{font-size:1.12rem;background:#f6fafb;border-radius:14px;padding:14px 18px;margin:8px 0}
+
+@media(max-width:760px){
+ .nl-two,.nl-fbd-grid{grid-template-columns:1fr}
+ .nl-elev-grid{grid-template-columns:1fr 1fr}
+ .nl-elev-grid>div{grid-column:1/-1;grid-row:1}
+}
+@media(max-width:560px){
+ .nl-arrow text{font-size:15px}
+ .nl-tick text,.nl-axis-title{font-size:14px}
+ .nl-predict-table th{white-space:normal}
+ .nl-predict-table,.nl-predict-table tbody,.nl-predict-table tr,.nl-predict-table th,.nl-predict-table td{display:block}
+}
+@media(prefers-reduced-motion:reduce){.nl *{transition:none!important;animation:none!important}}
