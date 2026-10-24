@@ -8,8 +8,9 @@ Each section serves one audience and level and sets its own language level, revi
 | Section | Audience | Lessons | Guide |
 | --- | --- | --- | --- |
 | Grade School | Elementary, first built for a Grade 5 classroom | `src/lessons/grade-school/` | `docs/sections/grade-school.md` |
+| College | Undergraduate, first- and second-year math | `src/lessons/college/` | `docs/sections/college.md` |
 
-More advanced sections (for example high school or university) can be added alongside it. `docs/sections/README.md` explains how.
+More sections (for example high school) can be added alongside these. `docs/sections/README.md` explains how.
 
 ## Local development
 
@@ -22,7 +23,8 @@ npm run build
 ```
 
 ## Current lessons
-All current lessons are in the Grade School section: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
+- Grade School: Fraction Explorer, Elevator Doors, Decimal Magnets, The Water Cycle, Inside a Human Cell, and Music Theory Basics.
+- College: Proof by Induction.
 
 **All are demos, not independently validated curriculum.** Do not assume standards alignment.
 
