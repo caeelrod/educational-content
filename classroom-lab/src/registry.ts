@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react';
 import FractionExplorer from './lessons/math/fraction-explorer/Lesson';
 import ElevatorDoors from './lessons/math/elevator-doors/Lesson';
+import DecimalMagnets from './lessons/math/decimal-magnets/Lesson';
 import WaterCycle from './lessons/science/water-cycle/Lesson';
 
 export type Subject = 'math' | 'science';
@@ -24,6 +25,9 @@ export const lessons: Lesson[] = [
   { id: 'elevator-doors', title: 'Elevator Doors', subject: 'math',
     summary: 'Find every factor of a number as the elevator doors close in.', durationMinutes: 15,
     type: 'interactive', standards: [], status: 'demo', Component: ElevatorDoors },
+  { id: 'decimal-magnets', title: 'Decimal Magnets', subject: 'math',
+    summary: 'Slide the button-magnet decimal point to multiply and divide by 10, 100, and 1,000.', durationMinutes: 20,
+    type: 'activity', standards: [], status: 'demo', Component: DecimalMagnets },
   { id: 'water-cycle', title: 'The Water Cycle', subject: 'science',
     summary: 'Follow water through evaporation, condensation, and precipitation.',
     durationMinutes: 15, type: 'interactive', standards: [], status: 'demo', Component: WaterCycle }
