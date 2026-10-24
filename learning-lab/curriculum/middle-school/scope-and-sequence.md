@@ -6,5 +6,6 @@
 | --- | --- | --- | --- | --- |
 | Persuasive Writing (`persuasive-writing`) | English language arts | 7 (usable in 6 to 8) | TBD. Verify the state's ELA argument-writing standards and adoption year | Argument writing: claim, evidence, reasoning, counterclaim, rebuttal |
 | Ratios and Proportions (`ratios-and-proportions`) | Math | 6 to 7 (parts 1 to 3 lean grade 6, part 4 grade 7) | TBD. Verify the state's math standards for ratios, rates, and proportional relationships, and the adoption year | Equivalent ratios, ratio tables, double number lines, unit rates, part to whole, proportional relationships and y = kx |
+| Plate Tectonics (`plate-tectonics`) | Science (earth science) | 6 to 8 (confirm the grade) | TBD. Verify against the Oklahoma Academic Standards for Science | Evidence for plate motion, seafloor spreading, plate boundaries |
 
 For Oklahoma: verify current standards at the official Department of Education website, confirm implementation timelines with the school, and cite precise identifiers in each lesson's metadata.

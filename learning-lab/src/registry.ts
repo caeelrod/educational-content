@@ -8,6 +8,7 @@ import HumanCell from './lessons/grade-school/science/human-cell/Lesson';
 import MusicTheory from './lessons/grade-school/music/music-theory-basics/Lesson';
 import PersuasiveWriting from './lessons/middle-school/english/persuasive-writing/Lesson';
 import RatiosAndProportions from './lessons/middle-school/math/ratios-and-proportions/Lesson';
+import PlateTectonics from './lessons/middle-school/science/plate-tectonics/Lesson';
 import NewtonsLaws from './lessons/high-school/science/newtons-laws/Lesson';
 import Induction from './lessons/college/math/induction/Lesson';
 import GeometricSeries from './lessons/college/math/geometric-series/Lesson';
@@ -53,6 +54,9 @@ export const lessons: Lesson[] = [
   { id: 'ratios-and-proportions', title: 'Ratios and Proportions', section: 'middle-school', subject: 'math',
     summary: 'Mix paint to discover equivalent ratios, scale recipes with tables and number lines, race with unit rates, and test whether a relationship is proportional.',
     durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: RatiosAndProportions },
+  { id: 'plate-tectonics', title: 'Plate Tectonics', section: 'middle-school', subject: 'science',
+    summary: 'Fit the continents back together, record magnetic stripes on a spreading ocean floor, watch plate boundaries build trenches, volcanoes, and mountains, and solve real places from their clues.',
+    durationMinutes: 45, type: 'interactive', standards: [], status: 'demo', Component: PlateTectonics },
   { id: 'newtons-laws', title: "Newton's Laws of Motion", section: 'high-school', subject: 'science',
     summary: 'Shove a block across wood, ice, and a frictionless floor, measure F = ma in a cart lab, push off on skates, draw free-body diagrams, and ride an elevator on a bathroom scale.',
     durationMinutes: 50, type: 'interactive', standards: [], status: 'demo', Component: NewtonsLaws },
