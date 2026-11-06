@@ -3,7 +3,7 @@ import Explore from './Explore';
 import Rhythm from './Rhythm';
 import Songs from './Songs';
 import Game from './Game';
-import { canPlay, isMuted, setMuted, setVolume, stopAll, usePlayer, useSound } from './audio';
+import { canPlay, isAppleTouch, isMuted, setMuted, setVolume, stopAll, useAudioUnlock, usePlayer, useSound } from './audio';
 
 type Mode = 'explore' | 'rhythm' | 'songs' | 'game';
 const modes: { id: Mode; label: string }[] = [
@@ -26,12 +26,15 @@ function SoundBar() {
     onChange={e => setVolume(Number(e.target.value))} />
   </label>
   <button disabled={muted} onClick={() => test.play([60, 64, 67].map((m, i) => ({ t: i * 0.22, dur: 0.5, midi: m })), 0.9)}>Test sound</button>
-  <span className="mu-sound-note">{muted ? 'Muted. Notes still light up so you can follow along.' : 'Press M to mute. Headphones help in a busy room.'}</span>
+  <span className="mu-sound-note">{muted ? 'Muted. Notes still light up so you can follow along.'
+   : isAppleTouch ? 'No sound? Turn up the volume with the side buttons, and turn off Silent mode if it is on.'
+   : 'Press M to mute. Headphones help in a busy room.'}</span>
  </div>;
 }
 
 export default function MusicTheory() {
  const [mode, setMode] = useState<Mode>('explore');
+ useAudioUnlock();
  useEffect(() => () => stopAll(), []);
 
  function key(e: KeyboardEvent<HTMLDivElement>) {
