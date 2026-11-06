@@ -24,8 +24,14 @@ const level = () => state.muted ? 0 : state.volume ** 2 * 0.9; // squared so the
 
 function audio(): AudioContext | null {
  if (!Ctor || state.muted) return null;
+ const c = context();
+ wake(c);
+ return c;
+}
+
+function context(): AudioContext {
  if (!ctx) {
-  ctx = new Ctor();
+  ctx = new Ctor!();
   master = ctx.createGain();
   master.gain.value = level();
   // A compressor keeps chords and fast passages from getting harsh or too loud.
@@ -33,9 +39,79 @@ function audio(): AudioContext | null {
   comp.threshold.value = -18;
   master.connect(comp).connect(ctx.destination);
  }
- if (ctx.state === 'suspended') void ctx.resume();
  return ctx;
 }
+
+// Safari can leave the context 'suspended' (made outside a tap) or 'interrupted' (after a call,
+// Siri, or switching apps), so anything other than 'running' needs a resume.
+function wake(c: AudioContext) {
+ if (c.state !== 'running' && c.state !== 'closed') c.resume().catch(() => { /* retried on the next tap */ });
+}
+
+// iPhone and iPad need two extra things before Web Audio is heard:
+// 1. The context only starts during a tap that counts as a user gesture. A finger pressing a piano key
+//    (pointerdown) does not count there, only lifting it does, so every tap or key press also tries here.
+// 2. Web Audio is treated like a game sound and silenced by the Silent mode switch. Asking for the
+//    'playback' audio session (Safari 17 and later), or on older versions playing a silent <audio>
+//    clip once, makes the page count as media, so it plays like a video would.
+type AudioSessionNav = Navigator & { audioSession?: { type: string } };
+let sessionSet = false;
+let silentUrl: string | null = null;
+let silentClip: HTMLAudioElement | null = null;
+
+// A tenth of a second of silence as a WAV file, built here so nothing is downloaded.
+function silence(): string {
+ if (silentUrl) return silentUrl;
+ const rate = 8000, n = 800, b = new DataView(new ArrayBuffer(44 + n * 2));
+ const text = (at: number, s: string) => [...s].forEach((ch, i) => b.setUint8(at + i, ch.charCodeAt(0)));
+ text(0, 'RIFF'); b.setUint32(4, 36 + n * 2, true); text(8, 'WAVEfmt ');
+ b.setUint32(16, 16, true); b.setUint16(20, 1, true); b.setUint16(22, 1, true);
+ b.setUint32(24, rate, true); b.setUint32(28, rate * 2, true); b.setUint16(32, 2, true); b.setUint16(34, 16, true);
+ text(36, 'data'); b.setUint32(40, n * 2, true);
+ return silentUrl = URL.createObjectURL(new Blob([b], { type: 'audio/wav' }));
+}
+
+function setSession() {
+ if (sessionSet) return;
+ const s = (navigator as AudioSessionNav).audioSession;
+ if (s) {
+  try { s.type = 'playback'; sessionSet = true; } catch { /* fall back to the silent clip */ }
+  if (sessionSet) return;
+ }
+ if (!isAppleTouch) { sessionSet = true; return; } // only iPhone and iPad have the switch to work around
+ if (silentClip) return; // one tap fires several gesture events; play the clip only once at a time
+ const el = silentClip = new Audio(silence());
+ el.setAttribute('playsinline', '');
+ el.play().then(() => { sessionSet = true; }, () => { silentClip = null; /* try again on the next tap */ });
+}
+
+function unlock() {
+ if (!Ctor || state.muted) return;
+ setSession();
+ const c = context();
+ if (c.state === 'running') return;
+ wake(c);
+ // Older Safari also wants a sound started inside the gesture: one silent sample is enough.
+ const src = c.createBufferSource();
+ src.buffer = c.createBuffer(1, 1, c.sampleRate);
+ src.connect(c.destination);
+ src.start(0);
+}
+
+const gestures = ['pointerup', 'touchend', 'click', 'keydown'] as const;
+// Listens for taps and key presses while the lesson is open. These run after the page's own
+// handlers, so turning sound back on with the mute button unlocks on that same tap.
+export function useAudioUnlock() {
+ useEffect(() => {
+  if (!Ctor) return;
+  gestures.forEach(g => document.addEventListener(g, unlock));
+  return () => gestures.forEach(g => document.removeEventListener(g, unlock));
+ }, []);
+}
+
+// iPhone and iPad (iPadOS reports itself as a Mac with a touch screen).
+export const isAppleTouch = typeof navigator !== 'undefined'
+ && (/iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
 
 function applyLevel() {
  if (ctx && master) master.gain.setTargetAtTime(level(), ctx.currentTime, 0.02);

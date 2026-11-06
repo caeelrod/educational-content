@@ -80,7 +80,7 @@ Students explain that pitch is how high or low a sound is, that faster vibration
 - Songs are written in C and simplified. Ode to Joy is in a common beginner version, and Twinkle, Twinkle is only its first line.
 - **Your turn** checks the order of notes, not rhythm or timing.
 - The piano on phones shows one octave at a time. Sliding a finger across the keys means a scroll can't start on the piano itself.
-- Audio needs a browser with the Web Audio API (all current Chromebook, Windows, Mac, iPad, and Android browsers). Without it, the lesson says so and still works visually. On iPhones and iPads, the ring/silent switch may mute web audio.
+- Audio needs a browser with the Web Audio API (all current Chromebook, Windows, Mac, iPad, and Android browsers). Without it, the lesson says so and still works visually. On iPhones and iPads, the lesson asks Safari to treat its sound like video so Silent mode does not mute it, and the sound bar reminds students to check the volume and Silent mode. If a device still plays nothing, turn off Silent mode, raise the volume, and press **Test sound** again. On iOS versions before 17 this depends on an older workaround and has not been checked on every version.
 
 ## Approval
 - Teacher reviewer:
